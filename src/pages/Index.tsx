@@ -7,6 +7,16 @@ import PromoCard from "@/components/PromoCard";
 import OrnamentalDivider from "@/components/OrnamentalDivider";
 import heroImage from "@/assets/hero-restaurant.jpg";
 import logo from "@/assets/logo.png";
+import traditionImg from "@/assets/tradition-of-excellence.jpeg";
+import occasionImg from "@/assets/place-for-every-occasion.jpeg";
+import inside2 from "@/assets/inside-2.jpeg";
+import inside3 from "@/assets/inside-3.jpeg";
+import inside5 from "@/assets/inside-5.jpeg";
+import moments1 from "@/assets/moments-1.jpeg";
+import moments2 from "@/assets/moments-2.jpeg";
+import moments3 from "@/assets/moments-3.jpeg";
+import moments4 from "@/assets/moments-4.jpeg";
+import moments5 from "@/assets/moments-5.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -167,7 +177,7 @@ const Index = () =>
       </div>
     </section>
 
-    {/* About Preview — EMPTY placeholder */}
+    {/* About Preview */}
     <section className="section-padding bg-background">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -176,9 +186,9 @@ const Index = () =>
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="w-full rounded-lg aspect-[4/5] bg-muted border border-gold/20 flex items-center justify-center">
+          className="w-full rounded-lg aspect-[4/5] overflow-hidden border border-gold/20">
 
-            <ImageIcon size={48} className="text-gold/30" />
+            <img src={traditionImg} alt="A tradition of excellence" className="w-full h-full object-cover" />
           </motion.div>
           <motion.div
           initial={{ opacity: 0, x: 30 }}
@@ -211,21 +221,21 @@ const Index = () =>
       </div>
     </section>
 
-    {/* Gallery Preview — EMPTY placeholders */}
+    {/* Gallery Preview */}
     <section className="section-padding bg-cream-light">
       <div className="container mx-auto px-4">
         <SectionTitle label="Gallery" title="Moments at Our Table" />
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-14">
-          {Array.from({ length: 6 }).map((_, i) =>
+          {[moments1, moments2, moments3, moments4, moments5, inside2].map((src, i) =>
         <motion.div
           key={i}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: i * 0.1 }}
-          className={`overflow-hidden rounded-lg bg-muted border border-gold/20 flex items-center justify-center ${i === 0 ? "row-span-2 aspect-auto min-h-[300px]" : "aspect-square"}`}>
+          className={`overflow-hidden rounded-lg border border-gold/20 ${i === 0 ? "row-span-2 aspect-auto min-h-[300px]" : "aspect-square"}`}>
 
-              <ImageIcon size={28} className="text-gold/30" />
+              <img src={src} alt={`Moments at our table ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </motion.div>
         )}
         </div>
@@ -240,7 +250,7 @@ const Index = () =>
       </div>
     </section>
 
-    {/* Our Restaurant — EMPTY placeholders */}
+    {/* Our Restaurant */}
     <section className="section-padding bg-background">
       <div className="container mx-auto px-4">
         <SectionTitle label="Our Space" title="Inside Al Primo Piano" subtitle="A glimpse into the elegant interiors and warm atmosphere that await you." />
@@ -250,21 +260,21 @@ const Index = () =>
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="overflow-hidden rounded-lg bg-muted border border-gold/20 flex items-center justify-center aspect-[16/10]"
+            className="overflow-hidden rounded-lg border border-gold/20 aspect-[16/10]"
           >
-            <ImageIcon size={36} className="text-gold/30" />
+            <img src={occasionImg} alt="Inside Al Primo Piano" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
           </motion.div>
           <div className="grid grid-cols-2 gap-6">
-            {Array.from({ length: 4 }).map((_, i) => (
+            {[inside2, inside3, inside5, inside2].map((src, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (i + 1) * 0.1, duration: 0.6 }}
-                className="overflow-hidden rounded-lg bg-muted border border-gold/20 flex items-center justify-center aspect-square"
+                className="overflow-hidden rounded-lg border border-gold/20 aspect-square"
               >
-                <ImageIcon size={28} className="text-gold/30" />
+                <img src={src} alt={`Inside Al Primo Piano ${i + 2}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </motion.div>
             ))}
           </div>

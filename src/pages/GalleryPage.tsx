@@ -1,17 +1,24 @@
 import { motion } from "framer-motion";
-import { ImageIcon } from "lucide-react";
 import SectionTitle from "@/components/SectionTitle";
 import BookingButton from "@/components/BookingButton";
+import moments1 from "@/assets/moments-1.jpeg";
+import moments2 from "@/assets/moments-2.jpeg";
+import moments3 from "@/assets/moments-3.jpeg";
+import moments4 from "@/assets/moments-4.jpeg";
+import moments5 from "@/assets/moments-5.jpeg";
+import inside2 from "@/assets/inside-2.jpeg";
+import inside3 from "@/assets/inside-3.jpeg";
+import inside5 from "@/assets/inside-5.jpeg";
 
 const galleryItems = [
-  { alt: "Restaurant ambiance" },
-  { alt: "Italian cuisine" },
-  { alt: "Dining experience" },
-  { alt: "Fresh ingredients" },
-  { alt: "Interior detail" },
-  { alt: "Plated dish" },
-  { alt: "Evening atmosphere" },
-  { alt: "Chef at work" },
+  { src: moments1, alt: "Restaurant ambiance" },
+  { src: inside2, alt: "Italian cuisine" },
+  { src: moments2, alt: "Dining experience" },
+  { src: inside3, alt: "Fresh ingredients" },
+  { src: moments3, alt: "Interior detail" },
+  { src: inside5, alt: "Plated dish" },
+  { src: moments4, alt: "Evening atmosphere" },
+  { src: moments5, alt: "Chef at work" },
 ];
 
 const GalleryPage = () => {
@@ -37,11 +44,11 @@ const GalleryPage = () => {
                 className="break-inside-avoid"
               >
                 <div
-                  className={`w-full rounded-lg overflow-hidden bg-muted border border-gold/20 flex items-center justify-center ${
+                  className={`w-full rounded-lg overflow-hidden border border-gold/20 ${
                     i % 3 === 0 ? "aspect-[3/4]" : i % 3 === 1 ? "aspect-square" : "aspect-[4/3]"
                   }`}
                 >
-                  <ImageIcon size={28} className="text-gold/30" />
+                  <img src={item.src} alt={item.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
               </motion.div>
             ))}
