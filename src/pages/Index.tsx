@@ -11,6 +11,7 @@ import traditionImg from "@/assets/tradition-of-excellence.jpeg";
 import occasionImg from "@/assets/place-for-every-occasion.jpeg";
 import inside2 from "@/assets/inside-2.jpeg";
 import inside3 from "@/assets/inside-3.jpeg";
+import inside4 from "@/assets/inside-4.jpeg";
 import inside5 from "@/assets/inside-5.jpeg";
 import moments1 from "@/assets/moments-1.jpeg";
 import moments2 from "@/assets/moments-2.jpeg";
@@ -265,7 +266,7 @@ const Index = () =>
             <img src={occasionImg} alt="Inside Al Primo Piano" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
           </motion.div>
           <div className="grid grid-cols-2 gap-6">
-            {[inside2, inside3, inside5, inside2].map((src, i) => (
+            {[inside4, inside3, inside5, inside2].map((src, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
