@@ -75,6 +75,14 @@ const Footer = () =>
           <a href="#" className="hover:text-primary-foreground/60 transition-colors">TripAdvisor</a>
         </div>
       </div>
+
+      <div className="text-center mt-6 text-xs text-primary-foreground/30 font-body">
+        <p>Website by{" "}
+          <a href="https://subflowofficial.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-primary-foreground/70 transition-colors underline underline-offset-2">
+            subflowofficial.com
+          </a>
+        </p>
+      </div>
     </div>
   </footer>;
 
