@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+/* Rustic variant fonts (loaded only when referenced by the /v1 /v2 /v3 pages) */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Rye&family=Fredericka+the+Great&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Patrick+Hand&display=swap');
+/* Playfair Display — only for the "subflow." footer credit logo */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -140,4 +147,22 @@
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--gold));
   border-radius: 3px;
+}
+
+/* ── Social-proof review marquee (v2 homepage) ───────────────────── */
+@keyframes apiano-marquee-l {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes apiano-marquee-r {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.apiano-marquee { display: flex; width: max-content; will-change: transform; }
+.apiano-marquee-l { animation: apiano-marquee-l 70s linear infinite; }
+.apiano-marquee-r { animation: apiano-marquee-r 80s linear infinite; }
+.apiano-marquee-fast { animation: apiano-marquee-l 34s linear infinite; }
+.apiano-marquee-row:hover .apiano-marquee { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .apiano-marquee-l, .apiano-marquee-r, .apiano-marquee-fast { animation: none; }
 }
