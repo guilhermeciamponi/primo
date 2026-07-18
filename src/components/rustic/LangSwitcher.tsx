@@ -16,7 +16,7 @@ export const LangSwitcher = ({
   className?: string;
 }) => (
   <div
-    className={`flex items-center overflow-hidden rounded-lg border ${className}`}
+    className={`inline-flex w-fit items-center overflow-hidden rounded-lg border ${className}`}
     style={{ borderColor: accent + "55" }}
   >
     {languages.map((l) => {

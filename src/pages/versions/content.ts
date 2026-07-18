@@ -30,7 +30,6 @@ import inside5 from "@/assets/inside-5.jpeg";
 import moments1 from "@/assets/moments-1.jpeg";
 import moments2 from "@/assets/moments-2.jpeg";
 import moments3 from "@/assets/moments-3.jpeg";
-import moments4 from "@/assets/moments-4.jpeg";
 import moments5 from "@/assets/moments-5.jpeg";
 
 export const images = {
@@ -40,7 +39,7 @@ export const images = {
   tradition: traditionImg,
   occasion: occasionImg,
   inside: [inside2, inside3, inside4, inside5],
-  moments: [moments1, moments2, moments3, moments4, moments5],
+  moments: [moments1, moments2, moments3, moments5],
   // The real illustrations lifted straight from the printed menu (transparent).
   illustrations: {
     olive: menuOlive,
@@ -77,7 +76,7 @@ export const v2photos = {
 export const signatureDishes = [
   { name: "Linguine con Cozze e Vongole", desc: "Pasta fresca con cozze e vongole.", price: "18€", img: v2FoodVongole },
   { name: "Spaghetti alla Bolognese", desc: "Pasta fresca al ragù premium.", price: "16€", img: v2FoodBolognese },
-  { name: "Tartare di Gamberi e Avocado", desc: "Gamberi con sale, olio, pepe e agrumi; cremoso di avocado.", price: "22€", img: v2FoodGamberi },
+  { name: "Gamberoni al Brandy", desc: "Gamberoni alla griglia sfumati con brandy, serviti con insalata condita.", price: "27€", img: v2FoodGamberi },
 ];
 
 export const restaurant = {
