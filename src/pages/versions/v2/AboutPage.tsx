@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Star, UtensilsCrossed, CalendarDays, Users, Camera } from "lucide-react";
+import { Star, UtensilsCrossed, CalendarDays, Users } from "lucide-react";
+import chefs from "@/assets/chefs.jpg";
 import { useLang } from "../i18n";
 import { images, v2photos, foodCatalogUrl, restaurant, RESERVE_URL } from "../content";
 import { reviewAggregate } from "../reviews";
@@ -118,10 +119,19 @@ const AboutPage = () => {
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
           <Reveal>
             <div className="rounded-[3px] border-8 border-[#b6924e] p-1 shadow-2xl" style={{ background: "linear-gradient(135deg,#d8b877,#a9822f,#d8b877)" }}>
-              <div className="flex aspect-[4/5] w-full flex-col items-center justify-center bg-[#efe6d2] text-[#b6924e]/70">
-                <Camera size={30} strokeWidth={1.4} />
-                <span className="mt-3 text-[11px] font-semibold uppercase tracking-[0.18em]">Photo coming soon</span>
-              </div>
+              <img src={chefs} alt="The Al Primo Piano kitchen team" className="aspect-[4/3] w-full object-cover" />
+            </div>
+            <div className="mt-5 grid grid-cols-3 gap-2 text-center">
+              {[
+                { name: "Domenico", role: "Pizzaiolo" },
+                { name: "Alfredo", role: "Chef" },
+                { name: "Giovanni", role: "Sous Chef" },
+              ].map((c) => (
+                <div key={c.name}>
+                  <p className="font-['Fraunces'] text-[15px] font-semibold text-[#1e2c4d] md:text-[17px]">{c.name}</p>
+                  <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#b6924e]">{c.role}</p>
+                </div>
+              ))}
             </div>
           </Reveal>
           <Reveal delay={0.1}>
