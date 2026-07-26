@@ -8,6 +8,8 @@ export default defineConfig({
   server: {
     host: "::",
     port: 8080,
+    // Fail loudly instead of drifting to 8081 when an instance is already up.
+    strictPort: true,
     hmr: {
       overlay: false,
     },

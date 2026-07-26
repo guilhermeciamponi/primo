@@ -365,7 +365,7 @@ export const dishPhotos: Record<string, string[]> = {
   "Souté di Cozze": ["soute-cozze-studio.jpg", "soute-cozze-foto.jpg"],
   "Spaghetti alla Bolognese": ["carpaccio-e-bolognese.jpg"],
   "Linguine con Cozze e Vongole": ["linguine-cozze-vongole.jpg"],
-  "Pesce Spada alla Ghiotta": ["pesce-spada-studio.jpg", "pesce-spada-foto.jpg"],
+  "Pesce Spada alla Ghiotta": ["pesce-spada-foto.jpg"],
   "Gamberoni al Brandy": ["gamberi-griglia.jpg"],
   "Insalata Mista": ["insalata-mista.jpg"],
   "Margherita": ["pizza-margherita.jpg"],

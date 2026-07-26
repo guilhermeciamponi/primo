@@ -13,7 +13,7 @@ const oil = images.illustrations.oil;
 
 const foodPhotos = [
   "carpaccio-manzo.jpg", "linguine-cozze-vongole.jpg", "soute-cozze-studio.jpg", "pizza-margherita.jpg",
-  "gamberi-griglia.jpg", "carpaccio-e-bolognese.jpg", "pizza-vegetariana.jpg", "pesce-spada-studio.jpg",
+  "gamberi-griglia.jpg", "carpaccio-e-bolognese.jpg", "pizza-vegetariana.jpg",
   "burrata-pugliese.jpg", "pizza-prosciutto-rucola.jpg", "soute-cozze-foto.jpg", "insalata-mista.jpg",
 ].map(foodCatalogUrl);
 
