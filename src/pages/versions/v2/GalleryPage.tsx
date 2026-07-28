@@ -14,7 +14,7 @@ const oil = images.illustrations.oil;
 const foodPhotos = [
   "carpaccio-manzo.jpg", "linguine-cozze-vongole.jpg", "soute-cozze-studio.jpg", "pizza-margherita.jpg",
   "gamberi-griglia.jpg", "carpaccio-e-bolognese.jpg", "pizza-vegetariana.jpg",
-  "burrata-pugliese.jpg", "pizza-prosciutto-rucola.jpg", "soute-cozze-foto.jpg", "insalata-mista.jpg",
+  "burrata-pugliese.jpg", "pizza-prosciutto-rucola.jpg", "insalata-mista.jpg",
 ].map(foodCatalogUrl);
 
 const GalleryPage = () => {
@@ -28,6 +28,7 @@ const GalleryPage = () => {
     v2photos.harbor, v2photos.wheel, v2photos.terrace, v2photos.corner,
     images.inside[0], images.inside[1], images.inside[2], images.inside[3],
     images.moments[0], images.moments[2], images.moments[3],
+    foodCatalogUrl("soute-cozze-foto.jpg"),
   ];
 
   const Block = ({ label, title, items }: { label: string; title: string; items: string[] }) => (
