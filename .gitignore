@@ -25,3 +25,10 @@ dist-ssr
 
 # Claude Code local config (machine-specific paths)
 .claude/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
