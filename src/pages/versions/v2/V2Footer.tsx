@@ -102,10 +102,10 @@ export const V2Footer = ({ tr }: { tr: Strings }) => {
             </div>
           </div>
           <div className="mt-8 text-center">
-            <a href="https://subflowofficial.com" target="_blank" rel="noreferrer" className="inline-flex items-baseline gap-1.5 opacity-70 transition-opacity hover:opacity-100">
+            <a href="https://nuvenhub.com" target="_blank" rel="noreferrer" className="inline-flex items-baseline gap-1.5 opacity-70 transition-opacity hover:opacity-100">
               <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f7f0e0]/40">by</span>
-              <span className="font-['Playfair_Display'] text-[18px] font-bold leading-none">
-                <span className="text-[#f7f0e0]">sub</span><span style={{ color: "#e31a56" }}>flow.</span>
+              <span className="font-['Comfortaa'] text-[16px] font-bold leading-none tracking-[0.06em]">
+                <span className="text-[#f7f0e0]">nuven</span><span style={{ color: "#e31a56" }}>hub</span>
               </span>
             </a>
           </div>

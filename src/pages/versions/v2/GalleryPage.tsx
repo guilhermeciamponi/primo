@@ -28,7 +28,6 @@ const GalleryPage = () => {
     v2photos.harbor, v2photos.wheel, v2photos.terrace, v2photos.corner,
     images.inside[0], images.inside[1], images.inside[2], images.inside[3],
     images.moments[0], images.moments[2], images.moments[3],
-    foodCatalogUrl("soute-cozze-foto.jpg"),
   ];
 
   const Block = ({ label, title, items }: { label: string; title: string; items: string[] }) => (

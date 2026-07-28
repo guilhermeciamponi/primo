@@ -7,8 +7,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: "::",
-    port: 8080,
-    // Fail loudly instead of drifting to 8081 when an instance is already up.
+    // Dedicated port for Al Primo Piano — kept clear of other projects (e.g. the
+    // subflow site on 8080) so they never clash.
+    port: 5188,
+    // Fail loudly instead of drifting to another port when 5188 is already up.
     strictPort: true,
     hmr: {
       overlay: false,
