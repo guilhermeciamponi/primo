@@ -103,18 +103,18 @@ export const socials = [
 // Opening hours — d = index into the localized day-name array (0 = Monday),
 // t = null means closed.
 export const hours: { d: number; t: string | null }[] = [
-  { d: 0, t: "12:00 – 22:00" }, // Monday
+  { d: 0, t: "12:00 to 22:00" }, // Monday
   { d: 1, t: null },            // Tuesday — closed
-  { d: 2, t: "12:00 – 22:00" }, // Wednesday
-  { d: 3, t: "12:00 – 22:00" }, // Thursday
-  { d: 4, t: "12:00 – 22:00" }, // Friday
-  { d: 5, t: "12:00 – 22:00" }, // Saturday
-  { d: 6, t: "12:00 – 22:00" }, // Sunday
+  { d: 2, t: "12:00 to 22:00" }, // Wednesday
+  { d: 3, t: "12:00 to 22:00" }, // Thursday
+  { d: 4, t: "12:00 to 22:00" }, // Friday
+  { d: 5, t: "12:00 to 22:00" }, // Saturday
+  { d: 6, t: "12:00 to 22:00" }, // Sunday
 ];
 
 // The daily opening time + the closed day, derived from `hours` for the
 // summary lines (home hero + footer). Full week is shown on the Contact page.
-export const openTime = hours.find((h) => h.t)?.t ?? "12:00 – 22:00";
+export const openTime = hours.find((h) => h.t)?.t ?? "12:00 to 22:00";
 export const closedDayIndex = hours.find((h) => !h.t)?.d ?? 1;
 
 // Reservations go to the restaurant's Google "Reserve a table" page.
@@ -183,7 +183,7 @@ export const fullMenu: MenuSection[] = [
     ],
   },
   {
-    id: "primi", title: "Primi", titleEn: "Mains — Pasta",
+    id: "primi", title: "Primi", titleEn: "Pasta Courses",
     items: [
       { name: "Lasagna Bolognese", price: "16€", it: "Pomodoro, manzo, erbe aromatiche, mozzarella, parmigiano, besciamella, basilico, sale, pepe e olio.", en: "Tomato, beef, aromatic herbs, mozzarella, parmesan, béchamel, basil, salt, pepper and olive oil.", nl: "Tomaat, rundvlees, aromatische kruiden, mozzarella, parmezaan, bechamelsaus, basilicum, zout, peper en olijfolie." },
       { name: "Strozzapreti al Pistacchio", price: "18€", it: "Pasta fresca con crema di pistacchio, Grana riserva, cannella e pomodori secchi.", en: "Fresh pasta with pistachio cream, Grana Riserva, cinnamon and sun-dried tomatoes.", nl: "Verse pasta met pistachecrème, Grana Riserva, kaneel en zongedroogde tomaten." },
@@ -197,7 +197,7 @@ export const fullMenu: MenuSection[] = [
     ],
   },
   {
-    id: "secondi", title: "Secondi", titleEn: "Mains — Meat & Fish",
+    id: "secondi", title: "Secondi", titleEn: "Meat & Fish",
     items: [
       { name: "Branzino all'Acqua Pazza", price: "28€", it: "Cotto con olio, aglio, pomodorini, olive e origano servito con patate al forno.", en: "Cooked with olive oil, garlic, cherry tomatoes, olives and oregano, served with roasted potatoes.", nl: "Bereid met olijfolie, knoflook, kerstomaatjes, olijven en oregano, geserveerd met geroosterde aardappelen." },
       { name: "Ossobuco", price: "29€", it: "Ossobuco, cipolla, brodo di carne servito con purè di patate.", en: "Ossobuco, onion and beef broth served with mashed potatoes.", nl: "Ossobuco, ui en runderbouillon, geserveerd met aardappelpuree." },
@@ -326,10 +326,10 @@ export const fullMenu: MenuSection[] = [
     items: [
       { name: "Pinot Grigio Terre di Marca", price: "6€ / 25€", it: "Tenute Corvezzo (Veneto)", en: "Tenute Corvezzo (Veneto)", nl: "Tenute Corvezzo (Veneto)" },
       { name: "Chardonnay San Leonardo", price: "6€ / 26€", it: "Tenute Carminucci (Marche)", en: "Tenute Carminucci (Marche)", nl: "Tenute Carminucci (Marche)" },
-      { name: "Sauvignon Blanc", price: "— / 38€", it: "Wairau River (Nuova Zelanda)", en: "Wairau River (New Zealand)", nl: "Wairau River (Nieuw-Zeeland)" },
-      { name: "Soave Danieli", price: "— / 28€", it: "Antonio Fattori Vignaiolo (Veneto)", en: "Antonio Fattori Vignaiolo (Veneto)", nl: "Antonio Fattori Vignaiolo (Veneto)" },
-      { name: "Petit Chablis", price: "— / 56€", it: "Domaine et Hamelin (Borgogna)", en: "Domaine et Hamelin (Burgundy)", nl: "Domaine et Hamelin (Bourgogne)" },
-      { name: "Roero Arneis", price: "— / 39€", it: "Careglio Az. Agricola", en: "Careglio Az. Agricola", nl: "Careglio Az. Agricola" },
+      { name: "Sauvignon Blanc", price: "38€", it: "Wairau River (Nuova Zelanda)", en: "Wairau River (New Zealand)", nl: "Wairau River (Nieuw-Zeeland)" },
+      { name: "Soave Danieli", price: "28€", it: "Antonio Fattori Vignaiolo (Veneto)", en: "Antonio Fattori Vignaiolo (Veneto)", nl: "Antonio Fattori Vignaiolo (Veneto)" },
+      { name: "Petit Chablis", price: "56€", it: "Domaine et Hamelin (Borgogna)", en: "Domaine et Hamelin (Burgundy)", nl: "Domaine et Hamelin (Bourgogne)" },
+      { name: "Roero Arneis", price: "39€", it: "Careglio Az. Agricola", en: "Careglio Az. Agricola", nl: "Careglio Az. Agricola" },
     ],
   },
   {
@@ -337,15 +337,15 @@ export const fullMenu: MenuSection[] = [
     items: [
       { name: "Primitivo Posidone", price: "6€ / 24€", it: "Tenute Corvezzo (Puglia)", en: "Tenute Corvezzo (Puglia)", nl: "Tenute Corvezzo (Puglia)" },
       { name: "Montepulciano d'Abruzzo Iava", price: "6€ / 26€", it: "Vignamadre (Abruzzo)", en: "Vignamadre (Abruzzo)", nl: "Vignamadre (Abruzzo)" },
-      { name: "Dolcetto", price: "— / 38€", it: "Massolino (Piemonte)", en: "Massolino (Piedmont)", nl: "Massolino (Piëmont)" },
-      { name: "Nebbiolo", price: "— / 49€", it: "Massolino (Piemonte)", en: "Massolino (Piedmont)", nl: "Massolino (Piëmont)" },
-      { name: "Barbaresco", price: "— / 65€", it: "Giacosa Fratelli (Piemonte)", en: "Giacosa Fratelli (Piedmont)", nl: "Giacosa Fratelli (Piëmont)" },
+      { name: "Dolcetto", price: "38€", it: "Massolino (Piemonte)", en: "Massolino (Piedmont)", nl: "Massolino (Piëmont)" },
+      { name: "Nebbiolo", price: "49€", it: "Massolino (Piemonte)", en: "Massolino (Piedmont)", nl: "Massolino (Piëmont)" },
+      { name: "Barbaresco", price: "65€", it: "Giacosa Fratelli (Piemonte)", en: "Giacosa Fratelli (Piedmont)", nl: "Giacosa Fratelli (Piëmont)" },
     ],
   },
   {
     id: "rosato", title: "Rosé", titleEn: "Rosé", drinks: true, note: "Glass / Bottle",
     items: [
-      { name: "Lyrics Grenache Gris Rosé", price: "— / 29€", it: "Fonjoya Vignerons (Languedoc)", en: "Fonjoya Vignerons (Languedoc)", nl: "Fonjoya Vignerons (Languedoc)" },
+      { name: "Lyrics Grenache Gris Rosé", price: "29€", it: "Fonjoya Vignerons (Languedoc)", en: "Fonjoya Vignerons (Languedoc)", nl: "Fonjoya Vignerons (Languedoc)" },
       { name: "Pinot Grigio Rosé", price: "7€ / 26€", it: "De Canal", en: "De Canal", nl: "De Canal" },
     ],
   },
@@ -353,7 +353,7 @@ export const fullMenu: MenuSection[] = [
     id: "bollicine", title: "Prosecco & Champagne", titleEn: "Prosecco & Champagne", drinks: true, note: "Glass / Bottle",
     items: [
       { name: "Prosecco Babulle", price: "6€ / 18€", it: "Losito e Guarini (Pavia)", en: "Losito e Guarini (Pavia)", nl: "Losito e Guarini (Pavia)" },
-      { name: "Champagne", price: "— / 59€", it: "Gruet (Champagne)", en: "Gruet (Champagne)", nl: "Gruet (Champagne)" },
+      { name: "Champagne", price: "59€", it: "Gruet (Champagne)", en: "Gruet (Champagne)", nl: "Gruet (Champagne)" },
     ],
   },
 ];

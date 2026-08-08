@@ -90,7 +90,7 @@ const ContactPage = () => {
           <Reveal delay={0.1}>
             <div className="h-full min-h-[420px] overflow-hidden rounded-[8px] border-2 border-[#b6924e]/40 shadow-md">
               <iframe
-                title="Al Primo Piano — map"
+                title="Al Primo Piano map"
                 src={MAPS_EMBED}
                 className="h-full min-h-[420px] w-full"
                 style={{ border: 0 }}

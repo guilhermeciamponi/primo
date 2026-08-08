@@ -65,7 +65,7 @@ const AboutPage = () => {
             “{restaurant.motto}”
           </blockquote>
           <div className="mt-7 flex justify-center"><DiamondRule /></div>
-          <p className="mt-4 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#b6924e]/80">— the chalkboard in our dining room</p>
+          <p className="mt-4 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#b6924e]/80">From the chalkboard in our dining room</p>
         </Reveal>
       </section>
 

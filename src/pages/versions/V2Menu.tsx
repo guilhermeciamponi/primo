@@ -249,7 +249,7 @@ const V2Menu = () => {
               <div className="flex items-center justify-center bg-[#efe6d2] p-4 md:p-6">
                 <img
                   src={press[pressIdx].image}
-                  alt={`${press[pressIdx].source} — Al Primo Piano`}
+                  alt={`${press[pressIdx].source}, Al Primo Piano`}
                   className="max-h-[680px] w-auto max-w-full rounded-[2px] object-contain shadow-md ring-1 ring-[#1e2c4d]/10"
                 />
               </div>
