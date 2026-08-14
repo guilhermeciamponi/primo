@@ -26,6 +26,27 @@
     <meta name="twitter:title" content="Al Primo Piano · Italian Restaurant · Volendam" />
     <meta name="twitter:description" content="A family run Italian kitchen above the harbour in Volendam. Fresh pasta, wood oven pizza and a warm welcome." />
     <meta name="twitter:image" content="https://alprimopiano.nl/heroes/contact-1.jpg" />
+    <!-- subflow:tracking:start — installed by subflow-site-kit. Safe to delete by hand; see SUBFLOW.md -->
+    <!--
+      Subflow analytics — OPTIONAL, and the only line connecting this site to the platform.
+
+      Enabled by setting VITE_SUBFLOW_TRACKING_SRC at build time (Cloudflare Pages → Settings →
+      Environment variables) to the URL Subflow shows under Site → Tracking. Leave it unset and
+      this block does nothing at all: no script, no request, no cookie. Delete the block to
+      disconnect permanently — nothing else in the site refers to it.
+    -->
+    <script>
+      (function () {
+        var s = "%VITE_SUBFLOW_TRACKING_SRC%";
+        // Vite leaves an unset var as the literal placeholder — treat that as "off".
+        if (!s || s.charAt(0) === "%") return;
+        var e = document.createElement("script");
+        e.src = s;
+        e.async = true;
+        document.head.appendChild(e);
+      })();
+    </script>
+    <!-- subflow:tracking:end -->
   </head>
 
   <body>
