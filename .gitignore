@@ -25,3 +25,8 @@ dist-ssr
 
 # Claude Code local config (machine-specific paths)
 .claude/
+
+# Client handover sheets contain plaintext passwords. Local only, never committed.
+*_Accounts_client.txt
+*Accounts_client.txt
+HANDOVER*.txt
