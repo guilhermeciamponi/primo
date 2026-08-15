@@ -74,6 +74,8 @@ export type Strings = {
   newsletterBtn: string;
   closed: string;
   rights: string;
+  /** Precedes "nuvenhub" in the footer credit, so it is a fragment and never a full sentence. */
+  madeBy: string;
   // Original-homepage structure strings
   heroSubtitle: string;
   kitchenLabel: string;
@@ -175,6 +177,7 @@ export const t: Record<Lang, Strings> = {
     newsletterBtn: "Subscribe",
     closed: "Closed",
     rights: "All rights reserved",
+    madeBy: "made by",
     heroSubtitle: "A family run Italian kitchen above the harbour, with fresh pasta and a warm welcome.",
     kitchenLabel: "From our kitchen",
     signatureTitle: "Signature Dishes",
@@ -277,6 +280,7 @@ export const t: Record<Lang, Strings> = {
     newsletterBtn: "Iscriviti",
     closed: "Chiuso",
     rights: "Tutti i diritti riservati",
+    madeBy: "realizzato da",
     heroSubtitle: "Una cucina italiana a conduzione familiare sul porto, con pasta fresca e un caloroso benvenuto.",
     kitchenLabel: "Dalla nostra cucina",
     signatureTitle: "Piatti della Casa",
@@ -379,6 +383,7 @@ export const t: Record<Lang, Strings> = {
     newsletterBtn: "Aanmelden",
     closed: "Gesloten",
     rights: "Alle rechten voorbehouden",
+    madeBy: "gemaakt door",
     heroSubtitle: "Een Italiaanse familiekeuken boven de haven, met verse pasta en een warm welkom.",
     kitchenLabel: "Uit onze keuken",
     signatureTitle: "Specialiteiten",

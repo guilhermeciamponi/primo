@@ -102,10 +102,39 @@ export const V2Footer = ({ tr }: { tr: Strings }) => {
             </div>
           </div>
           <div className="mt-8 text-center">
-            <a href="https://nuvenhub.com" target="_blank" rel="noreferrer" className="inline-flex items-baseline gap-1.5 opacity-70 transition-opacity hover:opacity-100">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f7f0e0]/40">by</span>
-              <span className="font-['Comfortaa'] text-[16px] font-bold leading-none tracking-[0.06em]">
-                <span className="text-[#f7f0e0]">nuven</span><span style={{ color: "#e31a56" }}>hub</span>
+            {/*
+              The agency credit.
+
+              This used to be the wordmark re-typed in Comfortaa — "nuven" in cream, "hub" in
+              pink. Comfortaa is not the brand typeface and the re-typed version carries no N
+              ribbon, so it read as a different company. Replaced with the real asset,
+              `nuven-mark.webp`, copied byte for byte from
+              `NUVEN/Websites done/nuvenhub/public/img/`. Do not redraw it again; if the brand
+              changes, replace the file.
+
+              The ribbon is pink on transparency, so it holds on this dark footer and on the
+              pale sibling sites equally — which is why it is used rather than the full lockup,
+              whose wordmark is near-white.
+
+              `alt=""` because "nuvenhub" sits beside it as text; a filled alt would make a
+              screen reader announce the brand twice.
+            */}
+            <a
+              href="https://nuvenhub.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 opacity-70 transition-opacity hover:opacity-100"
+            >
+              <img
+                src="/nuven-mark.webp"
+                alt=""
+                aria-hidden="true"
+                width={279}
+                height={245}
+                className="h-[14px] w-auto"
+              />
+              <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f7f0e0]/50">
+                {tr.madeBy} nuvenhub
               </span>
             </a>
           </div>

@@ -1,14 +1,87 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
+# ── Search engines: welcome ───────────────────────────────────────────────────
 User-agent: *
 Allow: /
+
+# No Sitemap: line — this site has no public/sitemap.xml. Pointing at one that 404s is
+# worse than omitting it: Search Console reports it as a fetch error on every crawl.
+
+# ── AI training and bulk-scraping crawlers: blocked ───────────────────────────
+# These are the crawlers that ingest a site to train or ground a model. Blocking
+# them is a request, not a wall: robots.txt is honoured voluntarily, and the
+# operators below are the ones that publicly document honouring it. Anything that
+# ignores robots.txt is not affected by any of this, and neither is a person with
+# "View source". See NUVEN/website-template/ANTI-COPY.md for what this does and does not buy.
+#
+# Deliberately NOT blocked, because they drive real referral traffic rather than
+# training corpora: OAI-SearchBot, ChatGPT-User, Perplexity-User. Add them here if
+# you would rather be absent from AI search results entirely.
+#
+# Note: Google-Extended and Applebot-Extended govern TRAINING ONLY. Neither affects
+# Google Search ranking or Siri/Spotlight — those are Googlebot and Applebot, which
+# stay allowed above.
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
