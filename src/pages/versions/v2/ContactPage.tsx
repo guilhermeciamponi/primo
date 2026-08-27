@@ -9,7 +9,10 @@ import { Reveal } from "./ui";
 
 const olive = images.illustrations.olive;
 const oil = images.illustrations.oil;
-const MAPS_EMBED = "https://www.google.com/maps?q=Al%20Primo%20Piano%2C%20Zuideinde%205%2C%20Volendam&output=embed";
+// Google serves X-Frame-Options: SAMEORIGIN on /maps?q=...&output=embed (it 302s to
+// /maps/embed and the redirect itself is refused), so point straight at the embed
+// endpoint, which sends no frame headers and needs no API key.
+const MAPS_EMBED = "https://www.google.com/maps/embed?pb=!1m3!2m1!1sAl+Primo+Piano,+Zuideinde+5,+Volendam!6i16";
 const MAPS_DIR = "https://www.google.com/maps/dir/?api=1&destination=Al%20Primo%20Piano%2C%20Zuideinde%205%2C%20Volendam";
 
 const Detail = ({ icon: Icon, title, children }: { icon: typeof MapPin; title: string; children: React.ReactNode }) => (
