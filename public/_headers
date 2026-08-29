@@ -2,8 +2,12 @@
 #
 # The anti-copy value here is `X-Frame-Options` + `frame-ancestors`: together they stop the
 # common "clone" that is really just someone iframing your site inside their own domain. They do
-# NOT stop a real copy — see NUVEN/website-template/ANTI-COPY.md. `X-Robots-Tag: noai` is advisory and honoured by a
-# minority of crawlers; it costs one line and is worth having alongside robots.txt.
+# NOT stop a real copy — see NUVEN/website-template/ANTI-COPY.md.
+#
+# `X-Robots-Tag: noai, noimageai` used to be set here and was REMOVED on 2026-08-26. It is a
+# third AI refusal, separate from robots.txt and from Cloudflare, and it contradicted the
+# policy: these sites want to be read and cited. If you are hunting for why an assistant
+# will not quote a site, check all three.
 #
 # CSP is deliberately loose on img/font/style because these sites load Google Fonts and remote
 # photography. Tighten per site if that changes.
@@ -20,4 +24,3 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Permissions-Policy: geolocation=(), microphone=(), camera=()
-  X-Robots-Tag: noai, noimageai
