@@ -86,7 +86,7 @@ const MenuPage = ({ withPhotos = true }: { withPhotos?: boolean }) => {
     <div className="min-h-screen bg-[#f7f0e0] font-['Inter'] text-[#1e2c4d] antialiased">
       <V2Header lang={lang} setLang={setLang} tr={tr} active="menu" />
 
-      <PageHero images={["/heroes/menu-1.jpg", "/heroes/menu-2.jpg", "/heroes/menu-3.jpg"]} eyebrow="Al Primo Piano" title={tr.menuTitle} sub={tr.menuSub} />
+      <PageHero images={["/heroes/menu-1.webp", "/heroes/menu-2.webp", "/heroes/menu-3.webp"]} eyebrow="Al Primo Piano" title={tr.menuTitle} sub={tr.menuSub} />
 
       {/* Section index — serif labels with a sliding gold underline */}
       <div className="sticky top-16 z-30 border-b border-[#b6924e]/25 bg-[#f7f0e0]/95 shadow-[0_1px_12px_-6px_rgba(30,44,77,0.25)] backdrop-blur-sm md:top-20">

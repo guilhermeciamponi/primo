@@ -361,14 +361,14 @@ export const fullMenu: MenuSection[] = [
 // Photos we currently have for a dish (keyed by exact menu name). Files live in
 // /public/food-catalog. Used for the Menu-page image slots.
 export const dishPhotos: Record<string, string[]> = {
-  "Carpaccio di Manzo": ["carpaccio-manzo.jpg"],
-  "Souté di Cozze": ["soute-cozze-studio.jpg", "soute-cozze-foto.jpg"],
-  "Spaghetti alla Bolognese": ["carpaccio-e-bolognese.jpg"],
-  "Linguine con Cozze e Vongole": ["linguine-cozze-vongole.jpg"],
-  "Gamberoni al Brandy": ["gamberi-griglia.jpg"],
-  "Insalata Mista": ["insalata-mista.jpg"],
-  "Margherita": ["pizza-margherita.jpg"],
-  "Primavera": ["pizza-prosciutto-rucola.jpg"],
-  "Vegetariana": ["pizza-vegetariana.jpg"],
+  "Carpaccio di Manzo": ["carpaccio-manzo.webp"],
+  "Souté di Cozze": ["soute-cozze-studio.webp", "soute-cozze-foto.webp"],
+  "Spaghetti alla Bolognese": ["carpaccio-e-bolognese.webp"],
+  "Linguine con Cozze e Vongole": ["linguine-cozze-vongole.webp"],
+  "Gamberoni al Brandy": ["gamberi-griglia.webp"],
+  "Insalata Mista": ["insalata-mista.webp"],
+  "Margherita": ["pizza-margherita.webp"],
+  "Primavera": ["pizza-prosciutto-rucola.webp"],
+  "Vegetariana": ["pizza-vegetariana.webp"],
 };
 export const foodCatalogUrl = (f: string) => `/food-catalog/${f}`;

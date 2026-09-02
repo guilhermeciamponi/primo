@@ -19,7 +19,7 @@ const AboutPage = () => {
     document.title = "Al Primo Piano · About";
   }, []);
 
-  const pillarImgs = [foodCatalogUrl("linguine-cozze-vongole.jpg"), v2photos.harbor, v2photos.corner];
+  const pillarImgs = [foodCatalogUrl("linguine-cozze-vongole.webp"), v2photos.harbor, v2photos.corner];
   const spacePhotos = [v2photos.wheel, v2photos.terrace, images.inside[0], images.inside[1], images.inside[2], images.moments[0]];
   const g = reviewAggregate.google;
   const facts = [
@@ -33,7 +33,7 @@ const AboutPage = () => {
     <div className="min-h-screen bg-[#f7f0e0] font-['Inter'] text-[#1e2c4d] antialiased">
       <V2Header lang={lang} setLang={setLang} tr={tr} active="about" />
 
-      <PageHero images={["/heroes/about-1.jpg", "/heroes/about-2.jpg", "/heroes/about-3.jpg"]} eyebrow={tr.storyKicker} title={tr.navAbout} />
+      <PageHero images={["/heroes/about-1.webp", "/heroes/about-2.webp", "/heroes/about-3.webp"]} eyebrow={tr.storyKicker} title={tr.navAbout} />
 
       {/* Story */}
       <section className="relative overflow-hidden bg-[#4e3a2a] text-[#f2e6cf]">

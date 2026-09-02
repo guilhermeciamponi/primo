@@ -35,7 +35,7 @@ const ContactPage = () => {
     <div className="min-h-screen bg-[#f7f0e0] font-['Inter'] text-[#1e2c4d] antialiased">
       <V2Header lang={lang} setLang={setLang} tr={tr} active="contact" />
 
-      <PageHero images={["/heroes/contact-1.jpg", "/heroes/contact-2.jpg", "/heroes/contact-3.jpg"]} eyebrow={tr.visitUs} title={tr.navContact} sub={tr.reserveBody} />
+      <PageHero images={["/heroes/contact-1.webp", "/heroes/contact-2.webp", "/heroes/contact-3.webp"]} eyebrow={tr.visitUs} title={tr.navContact} sub={tr.reserveBody} />
 
       <div className="relative overflow-hidden">
         <img src={olive} alt="" className="pointer-events-none absolute -right-10 -top-8 hidden w-56 opacity-[0.12] md:block" />

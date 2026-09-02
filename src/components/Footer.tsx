@@ -10,7 +10,7 @@ const Footer = () =>
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img alt="Al Primo Piano" className="h-10 w-auto brightness-200 opacity-80" src="/brand-uploads/3a302f4a-7daf-4d02-9b4f-28ef72a616c5.png" />
+            <img alt="Al Primo Piano" className="h-10 w-auto brightness-200 opacity-80" src="/brand-uploads/3a302f4a-7daf-4d02-9b4f-28ef72a616c5.webp" />
             <div>
               <h3 className="font-heading text-2xl font-semibold">AL PRIMO PIANO</h3>
               <p className="font-body text-xs tracking-wide-elegant uppercase text-primary-foreground/60">

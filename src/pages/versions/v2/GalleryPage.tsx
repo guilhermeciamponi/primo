@@ -12,9 +12,9 @@ const olive = images.illustrations.olive;
 const oil = images.illustrations.oil;
 
 const foodPhotos = [
-  "carpaccio-manzo.jpg", "linguine-cozze-vongole.jpg", "soute-cozze-studio.jpg", "pizza-margherita.jpg",
-  "gamberi-griglia.jpg", "carpaccio-e-bolognese.jpg", "pizza-vegetariana.jpg",
-  "burrata-pugliese.jpg", "pizza-prosciutto-rucola.jpg", "insalata-mista.jpg",
+  "carpaccio-manzo.webp", "linguine-cozze-vongole.webp", "soute-cozze-studio.webp", "pizza-margherita.webp",
+  "gamberi-griglia.webp", "carpaccio-e-bolognese.webp", "pizza-vegetariana.webp",
+  "burrata-pugliese.webp", "pizza-prosciutto-rucola.webp", "insalata-mista.webp",
 ].map(foodCatalogUrl);
 
 const GalleryPage = () => {
@@ -55,7 +55,7 @@ const GalleryPage = () => {
     <div className="min-h-screen bg-[#f7f0e0] font-['Inter'] text-[#1e2c4d] antialiased">
       <V2Header lang={lang} setLang={setLang} tr={tr} active="gallery" />
 
-      <PageHero images={["/heroes/gallery-1.jpg", "/heroes/gallery-2.jpg", "/heroes/gallery-3.jpg"]} eyebrow={tr.navGallery} title={tr.galleryTitle} />
+      <PageHero images={["/heroes/gallery-1.webp", "/heroes/gallery-2.webp", "/heroes/gallery-3.webp"]} eyebrow={tr.navGallery} title={tr.galleryTitle} />
 
       <div className="relative overflow-hidden">
         <img src={olive} alt="" className="pointer-events-none absolute -right-12 -top-8 hidden w-64 opacity-[0.14] md:block" />

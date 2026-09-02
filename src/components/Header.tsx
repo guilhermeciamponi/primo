@@ -22,7 +22,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 md:gap-3 shrink-0">
-          <img alt="Al Primo Piano logo" className="h-8 md:h-12 w-auto" src="/brand-uploads/a4f4435e-01a5-48c7-96d9-5fa05497d08b.png" />
+          <img alt="Al Primo Piano logo" className="h-8 md:h-12 w-auto" src="/brand-uploads/a4f4435e-01a5-48c7-96d9-5fa05497d08b.webp" />
           <div className="flex flex-col leading-none">
             <span className="font-heading text-base md:text-2xl font-semibold text-foreground tracking-wide whitespace-nowrap">
               AL PRIMO PIANO
