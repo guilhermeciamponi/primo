@@ -12,16 +12,16 @@ function preloadHero() {
     transformIndexHtml: {
       order: "post" as const,
       handler(html: string, ctx: { bundle?: Record<string, unknown> }) {
-        const hero = Object.keys(ctx.bundle ?? {}).find((f) => /v2-hero-[^/]*\.webp$/.test(f));
-        if (!hero) return html; // dev server, or the hero was renamed
-        return {
-          html,
-          tags: [{
-            tag: "link",
-            attrs: { rel: "preload", as: "image", href: "/" + hero, fetchpriority: "high" },
-            injectTo: "head" as const,
-          }],
-        };
+        const names = Object.keys(ctx.bundle ?? {});
+        const small = names.find((f) => /v2-hero-900-[^/]*\.webp$/.test(f));
+        const large = names.find((f) => /v2-hero-(?!900-)[^/]*\.webp$/.test(f));
+        if (!large) return html; // dev server, or the hero was renamed
+        // imagesrcset, not href: a phone must preload the 900w file it will actually paint,
+        // otherwise the preload fetches the 1600w one and the srcset choice arrives too late.
+        const attrs: Record<string, string> = small
+          ? { rel: "preload", as: "image", imagesrcset: `/${small} 900w, /${large} 1600w`, imagesizes: "100vw", fetchpriority: "high" }
+          : { rel: "preload", as: "image", href: "/" + large, fetchpriority: "high" };
+        return { html, tags: [{ tag: "link", attrs, injectTo: "head" as const }] };
       },
     },
   };

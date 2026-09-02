@@ -12,6 +12,9 @@ import pressVolendam from "@/assets/press-volendam.webp"; // De Stadskrant featu
 import heroImage from "@/assets/hero-restaurant.webp";
 // Real restaurant photography (used by v2)
 import v2Hero from "@/assets/v2-hero.webp";
+// 900w variant of the hero. It is the LCP element and full-bleed, so a phone was pulling the
+// 1600w file to paint it 412px wide.
+import v2HeroSmall from "@/assets/v2-hero-900.webp";
 import v2IntHarbor from "@/assets/v2-int-harbor.webp";
 import v2IntTerrace from "@/assets/v2-int-terrace.webp";
 import v2IntWheel from "@/assets/v2-int-wheel.webp";
@@ -63,6 +66,7 @@ export const press: { image: string; source: string; date: string; href: string;
 // Real restaurant photography for v2.
 export const v2photos = {
   hero: v2Hero,
+  heroSmall: v2HeroSmall,
   harbor: v2IntHarbor,
   terrace: v2IntTerrace,
   wheel: v2IntWheel,

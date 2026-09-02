@@ -65,7 +65,15 @@ const V2Menu = () => {
       {/* ── Hero ───────────────────────────────────────────────── */}
       <section className="relative flex min-h-[86vh] items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={v2photos.hero} alt="" className="h-full w-full object-cover" fetchpriority="high" decoding="async" />
+          <img
+            src={v2photos.hero}
+            srcSet={`${v2photos.heroSmall} 900w, ${v2photos.hero} 1600w`}
+            sizes="100vw"
+            alt=""
+            className="h-full w-full object-cover"
+            fetchpriority="high"
+            decoding="async"
+          />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(38,28,16,0.42), rgba(28,21,12,0.60))" }} />
         </div>
         <img src={olive} alt="" className="pointer-events-none absolute -right-6 -top-6 w-56 opacity-70 md:w-80" loading="lazy" />
