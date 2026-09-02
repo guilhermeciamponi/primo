@@ -17,8 +17,8 @@ export const V2Footer = ({ tr }: { tr: Strings }) => {
 
   return (
     <div className="relative overflow-hidden bg-[#4e3a2a]">
-      <img src={olive} alt="" className="pointer-events-none absolute -right-10 -top-12 z-0 w-72 opacity-40 md:w-[26rem]" />
-      <img src={oil} alt="" className="pointer-events-none absolute -left-8 bottom-0 z-0 hidden w-52 opacity-40 md:block md:w-60" />
+      <img src={olive} alt="" className="pointer-events-none absolute -right-10 -top-12 z-0 w-72 opacity-40 md:w-[26rem]" loading="lazy" />
+      <img src={oil} alt="" className="pointer-events-none absolute -left-8 bottom-0 z-0 hidden w-52 opacity-40 md:block md:w-60" loading="lazy" />
 
       {/* Address / Hours / Contact */}
       <section id="contact" className="relative z-10 py-16 text-[#f2e6cf]">
@@ -47,7 +47,7 @@ export const V2Footer = ({ tr }: { tr: Strings }) => {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
             <div>
               <div className="mb-4 flex items-center gap-3">
-                <img src={images.logoMark} alt="Al Primo Piano" className="h-10 w-auto" style={{ filter: "brightness(0) invert(0.9)" }} />
+                <img src={images.logoMark} alt="Al Primo Piano" className="h-10 w-auto" style={{ filter: "brightness(0) invert(0.9)" }} loading="lazy" />
                 <div>
                   <h3 className="font-['Cormorant_Garamond'] text-2xl font-bold">AL PRIMO PIANO</h3>
                   <p className="text-xs uppercase tracking-[0.2em] text-[#f7f0e0]/60">Italian Restaurant</p>
@@ -78,7 +78,7 @@ export const V2Footer = ({ tr }: { tr: Strings }) => {
                 </div>
               </div>
               <div className="mt-6">
-                <a href={RESERVE_URL} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-xl border-2 border-[#b6924e]/50 px-8 py-3.5 text-sm uppercase tracking-[0.15em] text-[#b6924e] transition-all duration-300 hover:bg-[#b6924e]/10">
+                <a href={RESERVE_URL} data-nv-cta="Reservar mesa" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-xl border-2 border-[#b6924e]/50 px-8 py-3.5 text-sm uppercase tracking-[0.15em] text-[#b6924e] transition-all duration-300 hover:bg-[#b6924e]/10">
                   {tr.btnReserve}
                 </a>
               </div>
@@ -131,8 +131,7 @@ export const V2Footer = ({ tr }: { tr: Strings }) => {
                 aria-hidden="true"
                 width={279}
                 height={245}
-                className="h-[14px] w-auto"
-              />
+                className="h-[14px] w-auto" loading="lazy" />
               <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f7f0e0]/50">
                 {tr.madeBy} nuvenhub
               </span>

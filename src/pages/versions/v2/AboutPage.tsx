@@ -37,12 +37,12 @@ const AboutPage = () => {
 
       {/* Story */}
       <section className="relative overflow-hidden bg-[#4e3a2a] text-[#f2e6cf]">
-        <img src={oil} alt="" className="pointer-events-none absolute -bottom-8 right-0 w-56 opacity-40 md:w-72" />
-        <img src={olive} alt="" className="pointer-events-none absolute -left-10 -top-8 w-52 opacity-30 md:w-64" />
+        <img src={oil} alt="" className="pointer-events-none absolute -bottom-8 right-0 w-56 opacity-40 md:w-72" loading="lazy" />
+        <img src={olive} alt="" className="pointer-events-none absolute -left-10 -top-8 w-52 opacity-30 md:w-64" loading="lazy" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
           <Reveal>
             <div className="rounded-[3px] border-8 border-[#b6924e] p-1 shadow-2xl" style={{ background: "linear-gradient(135deg,#d8b877,#a9822f,#d8b877)" }}>
-              <img src={v2photos.corner} alt="" className="aspect-[4/5] w-full object-cover" />
+              <img src={v2photos.corner} alt="" className="aspect-[4/5] w-full object-cover" loading="lazy" />
             </div>
           </Reveal>
           <Reveal delay={0.1}>
@@ -57,8 +57,8 @@ const AboutPage = () => {
 
       {/* Motto / philosophy quote */}
       <section className="relative overflow-hidden bg-[#efe6d2] py-20 md:py-28">
-        <img src={olive} alt="" className="pointer-events-none absolute -left-12 -top-6 hidden w-56 opacity-25 md:block" />
-        <img src={oil} alt="" className="pointer-events-none absolute -right-12 -bottom-6 hidden w-52 opacity-25 md:block" />
+        <img src={olive} alt="" className="pointer-events-none absolute -left-12 -top-6 hidden w-56 opacity-25 md:block" loading="lazy" />
+        <img src={oil} alt="" className="pointer-events-none absolute -right-12 -bottom-6 hidden w-52 opacity-25 md:block" loading="lazy" />
         <Reveal className="relative mx-auto max-w-3xl px-6 text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#b6924e]">{tr.aboutPhilosophyLabel}</p>
           <blockquote className="mt-6 font-['Fraunces'] text-3xl font-medium italic leading-snug text-[#4e3a2a] md:text-[2.6rem]">
@@ -71,7 +71,7 @@ const AboutPage = () => {
 
       {/* Three pillars — alternating image + text */}
       <section className="relative overflow-hidden bg-[#f7f0e0] py-20 md:py-28">
-        <img src={tomato} alt="" className="pointer-events-none absolute -right-8 top-10 hidden w-40 opacity-25 md:block" />
+        <img src={tomato} alt="" className="pointer-events-none absolute -right-8 top-10 hidden w-40 opacity-25 md:block" loading="lazy" />
         <div className="relative mx-auto max-w-6xl px-6">
           <Reveal><SectionTitle label={tr.aboutValuesLabel} title={tr.aboutTitle} /></Reveal>
           <div className="mt-16 space-y-16 md:space-y-24">
@@ -96,7 +96,7 @@ const AboutPage = () => {
 
       {/* Facts strip */}
       <section className="relative overflow-hidden bg-[#4e3a2a] py-14 text-[#f2e6cf] md:py-16">
-        <img src={olive} alt="" className="pointer-events-none absolute -left-10 -top-6 hidden w-48 opacity-20 md:block" />
+        <img src={olive} alt="" className="pointer-events-none absolute -left-10 -top-6 hidden w-48 opacity-20 md:block" loading="lazy" />
         <div className="relative mx-auto grid max-w-5xl grid-cols-2 gap-y-10 px-6 md:grid-cols-4">
           {facts.map((f, i) => {
             const Icon = f.icon;
@@ -115,11 +115,11 @@ const AboutPage = () => {
 
       {/* The family */}
       <section className="relative overflow-hidden bg-[#f7f0e0] py-20 md:py-24">
-        <img src={oil} alt="" className="pointer-events-none absolute -left-10 bottom-8 hidden w-56 opacity-30 md:block" />
+        <img src={oil} alt="" className="pointer-events-none absolute -left-10 bottom-8 hidden w-56 opacity-30 md:block" loading="lazy" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
           <Reveal>
             <div className="rounded-[3px] border-8 border-[#b6924e] p-1 shadow-2xl" style={{ background: "linear-gradient(135deg,#d8b877,#a9822f,#d8b877)" }}>
-              <img src={chefs} alt="The Al Primo Piano kitchen team" className="aspect-[4/3] w-full object-cover" />
+              <img src={chefs} alt="The Al Primo Piano kitchen team" className="aspect-[4/3] w-full object-cover" loading="lazy" />
             </div>
             <div className="mt-5 grid grid-cols-3 gap-2 text-center">
               {[
@@ -144,7 +144,7 @@ const AboutPage = () => {
 
       {/* The space */}
       <section className="relative overflow-hidden border-t border-[#1e2c4d]/10 bg-[#efe6d2] py-20 md:py-24">
-        <img src={oil} alt="" className="pointer-events-none absolute -right-10 top-8 hidden w-56 opacity-30 md:block" />
+        <img src={oil} alt="" className="pointer-events-none absolute -right-10 top-8 hidden w-56 opacity-30 md:block" loading="lazy" />
         <div className="relative mx-auto max-w-6xl px-6">
           <Reveal><SectionTitle label={tr.ourSpaceLabel} title={tr.insideTitle} sub={tr.insideSub} /></Reveal>
           <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3">
@@ -161,7 +161,7 @@ const AboutPage = () => {
 
       {/* CTA */}
       <section className="relative overflow-hidden bg-[#f7f0e0] py-16 text-center">
-        <img src={olive} alt="" className="pointer-events-none absolute -right-8 -top-8 hidden w-52 opacity-40 md:block" />
+        <img src={olive} alt="" className="pointer-events-none absolute -right-8 -top-8 hidden w-52 opacity-40 md:block" loading="lazy" />
         <Reveal className="relative mx-auto max-w-2xl px-6">
           <h3 className="font-['Fraunces'] text-3xl font-semibold text-[#1e2c4d] md:text-4xl">{tr.reserveTitle}</h3>
           <p className="mx-auto mt-2 max-w-md text-[15px] text-[#4e3a2a]/80">{tr.reserveBody}</p>

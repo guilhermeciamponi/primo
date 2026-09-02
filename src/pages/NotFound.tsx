@@ -30,8 +30,8 @@ const NotFound = () => {
 
       <section className="relative flex flex-1 items-center justify-center overflow-hidden bg-[#4e3a2a] text-[#f2e6cf]">
         {/* Branch flourishes + gold corner brackets, matching the page heroes */}
-        <img src={olive} alt="" className="pointer-events-none absolute -right-8 -top-8 z-0 w-56 opacity-30 md:w-80" />
-        <img src={oil} alt="" className="pointer-events-none absolute -left-8 -bottom-8 z-0 hidden w-52 opacity-25 md:block" />
+        <img src={olive} alt="" className="pointer-events-none absolute -right-8 -top-8 z-0 w-56 opacity-30 md:w-80" loading="lazy" />
+        <img src={oil} alt="" className="pointer-events-none absolute -left-8 -bottom-8 z-0 hidden w-52 opacity-25 md:block" loading="lazy" />
         <div className="absolute left-6 top-6 z-10 h-14 w-14 border-l-2 border-t-2 border-[#d8b877]/40" />
         <div className="absolute right-6 top-6 z-10 h-14 w-14 border-r-2 border-t-2 border-[#d8b877]/40" />
         <div className="absolute bottom-6 left-6 z-10 h-14 w-14 border-b-2 border-l-2 border-[#d8b877]/40" />

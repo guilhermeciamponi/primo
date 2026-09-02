@@ -68,15 +68,15 @@ const V2Menu = () => {
           <img src={v2photos.hero} alt="" className="h-full w-full object-cover" fetchpriority="high" decoding="async" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(38,28,16,0.42), rgba(28,21,12,0.60))" }} />
         </div>
-        <img src={olive} alt="" className="pointer-events-none absolute -right-6 -top-6 w-56 opacity-70 md:w-80" />
-        <img src={oil} alt="" className="pointer-events-none absolute -bottom-8 -left-8 hidden w-48 opacity-55 md:block" />
+        <img src={olive} alt="" className="pointer-events-none absolute -right-6 -top-6 w-56 opacity-70 md:w-80" loading="lazy" />
+        <img src={oil} alt="" className="pointer-events-none absolute -bottom-8 -left-8 hidden w-48 opacity-55 md:block" loading="lazy" />
         <div className="absolute left-6 top-6 h-14 w-14 border-l-2 border-t-2 border-[#d8b877]/50" />
         <div className="absolute right-6 top-6 h-14 w-14 border-r-2 border-t-2 border-[#d8b877]/50" />
         <div className="absolute bottom-6 left-6 h-14 w-14 border-b-2 border-l-2 border-[#d8b877]/50" />
         <div className="absolute bottom-6 right-6 h-14 w-14 border-b-2 border-r-2 border-[#d8b877]/50" />
 
         <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center text-[#f7f0e0]">
-          <img src={images.logoMark} alt="" className="mx-auto mb-5 h-16 w-16 object-contain" style={{ filter: "brightness(0) invert(0.92)" }} />
+          <img src={images.logoMark} alt="" className="mx-auto mb-5 h-16 w-16 object-contain" style={{ filter: "brightness(0) invert(0.92)" }} loading="lazy" />
           <h1 className="font-['Fraunces'] text-5xl font-semibold leading-none md:text-7xl">AL PRIMO PIANO</h1>
           <p className="mt-2 font-['Fraunces'] text-lg uppercase tracking-[0.3em] text-[#f7f0e0]/85 md:text-2xl">Italian Restaurant</p>
           <div className="mt-5 flex justify-center"><DiamondRule color="#d8b877" /></div>
@@ -111,8 +111,8 @@ const V2Menu = () => {
           </div>
         </div>
 
-        <img src={olive} alt="" className="pointer-events-none absolute -right-10 top-20 hidden w-56 opacity-15 md:block" />
-        <img src={oil} alt="" className="pointer-events-none absolute -left-12 bottom-2 hidden w-52 opacity-15 md:block" />
+        <img src={olive} alt="" className="pointer-events-none absolute -right-10 top-20 hidden w-56 opacity-15 md:block" loading="lazy" />
+        <img src={oil} alt="" className="pointer-events-none absolute -left-12 bottom-2 hidden w-52 opacity-15 md:block" loading="lazy" />
 
         <div className="relative py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6 text-center">
@@ -161,16 +161,16 @@ const V2Menu = () => {
 
       {/* ── Signature Dishes ───────────────────────────────────── */}
       <section id="menu" className="relative overflow-hidden bg-[#f7f0e0] py-20 md:py-28">
-        <img src={salami} alt="" className="pointer-events-none absolute right-6 top-10 hidden w-44 opacity-45 md:block" />
-        <img src={olive} alt="" className="pointer-events-none absolute -left-10 top-24 hidden w-52 -scale-x-100 opacity-30 md:block" />
-        <img src={tomato} alt="" className="pointer-events-none absolute -right-8 -bottom-4 hidden w-48 opacity-40 md:block" />
+        <img src={salami} alt="" className="pointer-events-none absolute right-6 top-10 hidden w-44 opacity-45 md:block" loading="lazy" />
+        <img src={olive} alt="" className="pointer-events-none absolute -left-10 top-24 hidden w-52 -scale-x-100 opacity-30 md:block" loading="lazy" />
+        <img src={tomato} alt="" className="pointer-events-none absolute -right-8 -bottom-4 hidden w-48 opacity-40 md:block" loading="lazy" />
         <div className="relative mx-auto max-w-6xl px-6">
           <SectionTitle label={tr.kitchenLabel} title={tr.signatureTitle} sub={tr.signatureSub} />
           <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
             {signatureDishes.map((d) => (
               <div key={d.name} className="group">
                 <div className="mb-5 overflow-hidden rounded-[3px] border-2 border-[#b6924e]/40">
-                  <img src={d.img} alt={d.name} className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={d.img} alt={d.name} className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
                 </div>
                 <h3 className="font-['Fraunces'] text-2xl font-semibold text-[#1e2c4d]">{d.name}</h3>
                 <p className="mt-2 text-[14px] leading-relaxed text-[#4e3a2a]/75">{d.desc}</p>
@@ -185,11 +185,11 @@ const V2Menu = () => {
 
       {/* ── About / Story (brown — restaurant warmth) ──────────── */}
       <section id="about" className="relative overflow-hidden bg-[#4e3a2a] text-[#f2e6cf]">
-        <img src={oil} alt="" className="pointer-events-none absolute -bottom-8 right-0 w-56 opacity-50 md:w-72" />
-        <img src={olive} alt="" className="pointer-events-none absolute -left-10 -top-8 w-52 opacity-40 md:w-64" />
+        <img src={oil} alt="" className="pointer-events-none absolute -bottom-8 right-0 w-56 opacity-50 md:w-72" loading="lazy" />
+        <img src={olive} alt="" className="pointer-events-none absolute -left-10 -top-8 w-52 opacity-40 md:w-64" loading="lazy" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
           <div className="rounded-[3px] border-8 border-[#b6924e] p-1 shadow-2xl" style={{ background: "linear-gradient(135deg,#d8b877,#a9822f,#d8b877)" }}>
-            <img src={v2photos.corner} alt="" className="aspect-[4/5] w-full object-cover" />
+            <img src={v2photos.corner} alt="" className="aspect-[4/5] w-full object-cover" loading="lazy" />
           </div>
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#d8b877]">{tr.storyKicker}</p>
@@ -203,14 +203,14 @@ const V2Menu = () => {
 
       {/* ── Gallery ────────────────────────────────────────────── */}
       <section id="gallery" className="relative overflow-hidden bg-[#f7f0e0] py-20 md:py-28">
-        <img src={pizza} alt="" className="pointer-events-none absolute -left-12 top-8 hidden w-56 opacity-30 md:block" />
-        <img src={cake} alt="" className="pointer-events-none absolute -right-8 -bottom-4 hidden w-48 opacity-40 md:block" />
+        <img src={pizza} alt="" className="pointer-events-none absolute -left-12 top-8 hidden w-56 opacity-30 md:block" loading="lazy" />
+        <img src={cake} alt="" className="pointer-events-none absolute -right-8 -bottom-4 hidden w-48 opacity-40 md:block" loading="lazy" />
         <div className="relative mx-auto max-w-6xl px-6">
           <SectionTitle label={tr.navGallery} title={tr.galleryTitle} />
           <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3">
             {v2photos.gallery.map((src, i) => (
               <div key={i} className="overflow-hidden rounded-[2px] border-2 border-[#b6924e]/50">
-                <img src={src} alt="" className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-105" />
+                <img src={src} alt="" className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy" />
               </div>
             ))}
           </div>
@@ -220,17 +220,17 @@ const V2Menu = () => {
 
       {/* ── Inside / Our Space ─────────────────────────────────── */}
       <section className="relative overflow-hidden border-t border-[#1e2c4d]/12 bg-[#efe6d2] py-20 md:py-28">
-        <img src={oil} alt="" className="pointer-events-none absolute -left-10 bottom-8 hidden w-60 opacity-40 md:block" />
+        <img src={oil} alt="" className="pointer-events-none absolute -left-10 bottom-8 hidden w-60 opacity-40 md:block" loading="lazy" />
         <div className="relative mx-auto max-w-6xl px-6">
           <SectionTitle label={tr.ourSpaceLabel} title={tr.insideTitle} sub={tr.insideSub} />
           <div className="mt-14 grid grid-cols-1 items-stretch gap-6 md:grid-cols-2">
             <div className="overflow-hidden rounded-[3px] border-2 border-[#b6924e]/50">
-              <img src={v2photos.harbor} alt="" className="h-full min-h-[300px] w-full object-cover transition-transform duration-700 hover:scale-105" />
+              <img src={v2photos.harbor} alt="" className="h-full min-h-[300px] w-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy" />
             </div>
             <div className="grid grid-cols-2 content-start gap-6">
               {[v2photos.wheel, v2photos.terrace, images.inside[0], v2photos.vegpizza].map((src, i) => (
                 <div key={i} className="overflow-hidden rounded-[3px] border-2 border-[#b6924e]/50">
-                  <img src={src} alt="" className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-105" />
+                  <img src={src} alt="" className="aspect-square w-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy" />
                 </div>
               ))}
             </div>
@@ -240,7 +240,7 @@ const V2Menu = () => {
 
       {/* ── In the press (one large clipping at a time) ─────────── */}
       <section id="press" className="relative overflow-hidden bg-[#f7f0e0] py-20 md:py-28">
-        <img src={oil} alt="" className="pointer-events-none absolute -left-12 bottom-6 hidden w-56 opacity-35 md:block" />
+        <img src={oil} alt="" className="pointer-events-none absolute -left-12 bottom-6 hidden w-56 opacity-35 md:block" loading="lazy" />
         <div className="relative mx-auto max-w-5xl px-6">
           <SectionTitle label={tr.pressLabel} title={tr.pressTitle} sub={tr.pressSub} />
 
@@ -250,8 +250,7 @@ const V2Menu = () => {
                 <img
                   src={press[pressIdx].image}
                   alt={`${press[pressIdx].source}, Al Primo Piano`}
-                  className="max-h-[680px] w-auto max-w-full rounded-[2px] object-contain shadow-md ring-1 ring-[#1e2c4d]/10"
-                />
+                  className="max-h-[680px] w-auto max-w-full rounded-[2px] object-contain shadow-md ring-1 ring-[#1e2c4d]/10" loading="lazy" />
               </div>
 
               <div className="flex flex-col gap-5 border-t-2 border-[#b6924e]/25 p-6 md:flex-row md:items-center md:justify-between md:p-8">
@@ -314,10 +313,10 @@ const V2Menu = () => {
 
       {/* ── Reserve ("Come and see us") — Inside's cream bg ────── */}
       <section id="reserve" className="relative overflow-hidden bg-[#efe6d2] py-16 md:py-20">
-        <img src={salami} alt="" className="pointer-events-none absolute -right-8 -top-8 hidden w-52 opacity-45 md:block" />
-        <img src={cake} alt="" className="pointer-events-none absolute -left-8 -bottom-6 hidden w-52 opacity-55 md:block" />
+        <img src={salami} alt="" className="pointer-events-none absolute -right-8 -top-8 hidden w-52 opacity-45 md:block" loading="lazy" />
+        <img src={cake} alt="" className="pointer-events-none absolute -left-8 -bottom-6 hidden w-52 opacity-55 md:block" loading="lazy" />
         <div className="relative mx-auto max-w-2xl px-6 text-center">
-          <img src={images.logoMark} alt="" className="mx-auto h-24 w-24 object-contain md:h-28 md:w-28" />
+          <img src={images.logoMark} alt="" className="mx-auto h-24 w-24 object-contain md:h-28 md:w-28" loading="lazy" />
           <h2 className="mt-4 font-['Fraunces'] text-4xl font-semibold text-[#1e2c4d] md:text-5xl">{tr.reserveTitle}</h2>
           <p className="mx-auto mt-3 max-w-md text-[15px] text-[#4e3a2a]/80">{tr.reserveBody}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

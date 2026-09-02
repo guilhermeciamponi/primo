@@ -11,7 +11,7 @@ const MenuItem = ({ name, description, price, showPhoto = false, image }: MenuIt
     {showPhoto && (
       <div className="w-20 h-20 shrink-0 rounded-lg overflow-hidden border border-gold/20">
         {image ? (
-          <img src={image} alt={name} className="w-full h-full object-cover" />
+          <img src={image} alt={name} className="w-full h-full object-cover" loading="lazy" />
         ) : (
           <div className="w-full h-full bg-muted flex items-center justify-center">
             <span className="text-gold/30 text-[10px] font-body">Photo</span>

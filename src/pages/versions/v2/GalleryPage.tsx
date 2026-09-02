@@ -58,8 +58,8 @@ const GalleryPage = () => {
       <PageHero images={["/heroes/gallery-1.webp", "/heroes/gallery-2.webp", "/heroes/gallery-3.webp"]} eyebrow={tr.navGallery} title={tr.galleryTitle} />
 
       <div className="relative overflow-hidden">
-        <img src={olive} alt="" className="pointer-events-none absolute -right-12 -top-8 hidden w-64 opacity-[0.14] md:block" />
-        <img src={oil} alt="" className="pointer-events-none absolute -left-12 bottom-8 hidden w-52 opacity-[0.13] md:block" />
+        <img src={olive} alt="" className="pointer-events-none absolute -right-12 -top-8 hidden w-64 opacity-[0.14] md:block" loading="lazy" />
+        <img src={oil} alt="" className="pointer-events-none absolute -left-12 bottom-8 hidden w-52 opacity-[0.13] md:block" loading="lazy" />
         <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-20">
           <Block label={tr.kitchenLabel} title={tr.galleryTitle} items={foodPhotos} />
           <div className="mt-20" />

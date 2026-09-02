@@ -31,7 +31,7 @@ export const PageHero = ({
     <section className="relative flex min-h-[48vh] items-center justify-center overflow-hidden md:min-h-[58vh]">
       <div className="absolute inset-0 bg-[#241a10]">
         {/* base: the outgoing photo, held fully opaque underneath */}
-        <img src={images[base]} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={images[base]} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
         {/* incoming photo fades in on top of the base */}
         <motion.img
           key={curr}
@@ -44,8 +44,8 @@ export const PageHero = ({
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(38,28,16,0.55), rgba(28,21,12,0.68))" }} />
       </div>
-      <img src={olive} alt="" className="pointer-events-none absolute -right-6 -top-6 z-10 w-44 opacity-60 md:w-64" />
-      <img src={oil} alt="" className="pointer-events-none absolute -bottom-8 -left-8 z-10 hidden w-36 opacity-45 md:block" />
+      <img src={olive} alt="" className="pointer-events-none absolute -right-6 -top-6 z-10 w-44 opacity-60 md:w-64" loading="lazy" />
+      <img src={oil} alt="" className="pointer-events-none absolute -bottom-8 -left-8 z-10 hidden w-36 opacity-45 md:block" loading="lazy" />
       <div className="absolute left-5 top-5 z-10 h-12 w-12 border-l-2 border-t-2 border-[#d8b877]/50" />
       <div className="absolute right-5 top-5 z-10 h-12 w-12 border-r-2 border-t-2 border-[#d8b877]/50" />
       <div className="absolute bottom-5 left-5 z-10 h-12 w-12 border-b-2 border-l-2 border-[#d8b877]/50" />

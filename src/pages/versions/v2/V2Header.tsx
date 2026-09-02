@@ -30,7 +30,7 @@ export const V2Header = ({
 
   const ReserveBtn = ({ className = "" }: { className?: string }) => (
     <a
-      href={RESERVE_URL}
+      href={RESERVE_URL} data-nv-cta="Reservar mesa"
       target="_blank"
       rel="noreferrer"
       className={`inline-flex items-center gap-2 rounded-xl border-2 border-[#c0a078] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-[#b08a4a] transition-all duration-300 hover:bg-[#c0a078] hover:text-[#2e2013] ${className}`}
@@ -43,7 +43,7 @@ export const V2Header = ({
     <header className="sticky top-0 z-50 border-b border-[#1e2c4d]/12 bg-[#f7f0e0]/95 backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:h-20">
         <Link to="/" className="flex shrink-0 items-center gap-2 md:gap-3">
-          <img src={images.logoMark} alt="Al Primo Piano logo" className="h-8 w-auto md:h-12" />
+          <img src={images.logoMark} alt="Al Primo Piano logo" className="h-8 w-auto md:h-12" loading="lazy" />
           <div className="flex flex-col leading-none">
             <span className="font-['Cormorant_Garamond'] text-lg font-bold tracking-wide text-[#1e2c4d] md:text-2xl">AL PRIMO PIANO</span>
             <span className="text-[8px] uppercase tracking-[0.25em] text-[#b6924e] md:text-[10px]">Italian Restaurant</span>

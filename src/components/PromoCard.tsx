@@ -13,7 +13,7 @@ const PromoCard = ({ tag, title, description, dateRange, showPlaceholder = false
   <div className="bg-card border border-gold/20 rounded-lg p-6 md:p-8 flex flex-col">
     {image ? (
       <div className="w-full aspect-video rounded-lg overflow-hidden border border-gold/20 mb-5">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
       </div>
     ) : showPlaceholder ? (
       <div className="w-full aspect-video rounded-lg bg-muted border border-gold/20 flex items-center justify-center mb-5">

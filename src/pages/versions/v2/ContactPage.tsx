@@ -38,8 +38,8 @@ const ContactPage = () => {
       <PageHero images={["/heroes/contact-1.webp", "/heroes/contact-2.webp", "/heroes/contact-3.webp"]} eyebrow={tr.visitUs} title={tr.navContact} sub={tr.reserveBody} />
 
       <div className="relative overflow-hidden">
-        <img src={olive} alt="" className="pointer-events-none absolute -right-10 -top-8 hidden w-56 opacity-[0.12] md:block" />
-        <img src={oil} alt="" className="pointer-events-none absolute -left-12 bottom-8 hidden w-52 opacity-[0.13] md:block" />
+        <img src={olive} alt="" className="pointer-events-none absolute -right-10 -top-8 hidden w-56 opacity-[0.12] md:block" loading="lazy" />
+        <img src={oil} alt="" className="pointer-events-none absolute -left-12 bottom-8 hidden w-52 opacity-[0.13] md:block" loading="lazy" />
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 py-16 md:grid-cols-2 md:py-20">
           {/* Details */}
           <Reveal className="space-y-8">
@@ -79,7 +79,7 @@ const ContactPage = () => {
               <h3 className="font-['Fraunces'] text-xl font-semibold text-[#1e2c4d]">{tr.reserveTitle}</h3>
               <p className="mt-2 text-[14px] text-[#4e3a2a]/80">{tr.reserveBody}</p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <a href={RESERVE_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#4e3a2a] px-6 py-3 text-[12px] font-semibold uppercase tracking-widest text-[#f7f0e0] transition-colors hover:bg-[#5c4632]">
+                <a href={RESERVE_URL} data-nv-cta="Reservar mesa" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#4e3a2a] px-6 py-3 text-[12px] font-semibold uppercase tracking-widest text-[#f7f0e0] transition-colors hover:bg-[#5c4632]">
                   <CalendarDays size={15} /> {tr.btnReserve}
                 </a>
                 <a href="tel:+31614978723" className="inline-flex items-center gap-2 rounded-full border-2 border-[#b6924e] px-6 py-3 text-[12px] font-semibold uppercase tracking-widest text-[#b6924e] transition-colors hover:bg-[#b6924e] hover:text-[#f7f0e0]">

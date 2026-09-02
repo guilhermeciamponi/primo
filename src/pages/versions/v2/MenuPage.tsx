@@ -43,7 +43,7 @@ const DishCard = ({ d, desc, i }: { d: MenuDish; desc: string; i: number }) => {
           <img src={foodCatalogUrl(photo)} alt={d.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center text-center text-[#b6924e]/60">
-            <img src={olive} alt="" className="pointer-events-none absolute -right-6 -top-4 w-24 opacity-20" />
+            <img src={olive} alt="" className="pointer-events-none absolute -right-6 -top-4 w-24 opacity-20" loading="lazy" />
             <UtensilsCrossed size={26} strokeWidth={1.5} />
             <span className="mt-2 text-[10px] font-semibold uppercase tracking-[0.15em]">Foto in arrivo</span>
           </div>
@@ -114,10 +114,10 @@ const MenuPage = ({ withPhotos = true }: { withPhotos?: boolean }) => {
       {/* Active tab content */}
       <div className="relative overflow-hidden">
         {/* Food-illustration flourishes lifted from the printed menu — one per corner. */}
-        <img src={tomato} alt="" className="pointer-events-none absolute -left-16 top-14 hidden w-52 opacity-[0.16] md:block" />
-        <img src={salami} alt="" className="pointer-events-none absolute -right-16 top-40 hidden w-48 -scale-x-100 opacity-[0.16] md:block" />
-        <img src={pizza} alt="" className="pointer-events-none absolute -left-14 bottom-28 hidden w-52 opacity-[0.14] md:block" />
-        <img src={cake} alt="" className="pointer-events-none absolute -right-14 bottom-14 hidden w-48 opacity-[0.18] md:block" />
+        <img src={tomato} alt="" className="pointer-events-none absolute -left-16 top-14 hidden w-52 opacity-[0.16] md:block" loading="lazy" />
+        <img src={salami} alt="" className="pointer-events-none absolute -right-16 top-40 hidden w-48 -scale-x-100 opacity-[0.16] md:block" loading="lazy" />
+        <img src={pizza} alt="" className="pointer-events-none absolute -left-14 bottom-28 hidden w-52 opacity-[0.14] md:block" loading="lazy" />
+        <img src={cake} alt="" className="pointer-events-none absolute -right-14 bottom-14 hidden w-48 opacity-[0.18] md:block" loading="lazy" />
         <div className="relative mx-auto max-w-5xl px-6 py-14 md:py-20">
           <motion.div key={active} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: "easeOut" }}>
             {sections.map((section) => {
@@ -150,7 +150,7 @@ const MenuPage = ({ withPhotos = true }: { withPhotos?: boolean }) => {
 
       {/* Reserve CTA */}
       <section className="relative overflow-hidden bg-[#efe6d2] py-16">
-        <img src={olive} alt="" className="pointer-events-none absolute -right-8 -top-8 hidden w-52 opacity-40 md:block" />
+        <img src={olive} alt="" className="pointer-events-none absolute -right-8 -top-8 hidden w-52 opacity-40 md:block" loading="lazy" />
         <div className="relative mx-auto max-w-2xl px-6 text-center">
           <Reveal>
             <h3 className="font-['Fraunces'] text-3xl font-semibold text-[#1e2c4d] md:text-4xl">{tr.reserveTitle}</h3>
@@ -163,7 +163,7 @@ const MenuPage = ({ withPhotos = true }: { withPhotos?: boolean }) => {
                   <span className="font-['Fraunces'] text-lg font-semibold">{restaurant.phone}</span>
                 </span>
               </a>
-              <a href={RESERVE_URL} target="_blank" rel="noreferrer" className="rounded-full border-2 border-[#b6924e] px-8 py-3.5 text-[12px] font-semibold uppercase tracking-widest text-[#b6924e] transition-colors hover:bg-[#b6924e] hover:text-[#f7f0e0]">{tr.btnReserve}</a>
+              <a href={RESERVE_URL} data-nv-cta="Reservar mesa" target="_blank" rel="noreferrer" className="rounded-full border-2 border-[#b6924e] px-8 py-3.5 text-[12px] font-semibold uppercase tracking-widest text-[#b6924e] transition-colors hover:bg-[#b6924e] hover:text-[#f7f0e0]">{tr.btnReserve}</a>
             </div>
           </Reveal>
         </div>
