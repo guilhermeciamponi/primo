@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
-/* Rustic variant fonts (loaded only when referenced by the /v1 /v2 /v3 pages) */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Rye&family=Fredericka+the+Great&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Patrick+Hand&display=swap');
+/* Fonts are requested from index.html, not with @import. A CSS @import is discovered only
+   after this stylesheet has downloaded, so the font CSS was chained behind it and blocked
+   rendering for ~1.5s. Eleven of the fifteen families here were never referenced by any
+   component; only Cormorant Garamond, Fraunces and Inter are. */
 /*
   Comfortaa was here to set the footer credit as a hand-typed "nuvenhub" wordmark. It never
   matched the Nuven wordmark — Comfortaa is not the brand typeface and the re-typed version has

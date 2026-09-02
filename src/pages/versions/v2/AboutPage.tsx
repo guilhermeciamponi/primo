@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Star, UtensilsCrossed, CalendarDays, Users } from "lucide-react";
-import chefs from "@/assets/chefs.jpg";
+import chefs from "@/assets/chefs.webp";
 import { useLang } from "../i18n";
 import { images, v2photos, foodCatalogUrl, restaurant, RESERVE_URL } from "../content";
 import { reviewAggregate } from "../reviews";
@@ -165,7 +165,7 @@ const AboutPage = () => {
         <Reveal className="relative mx-auto max-w-2xl px-6">
           <h3 className="font-['Fraunces'] text-3xl font-semibold text-[#1e2c4d] md:text-4xl">{tr.reserveTitle}</h3>
           <p className="mx-auto mt-2 max-w-md text-[15px] text-[#4e3a2a]/80">{tr.reserveBody}</p>
-          <a href={RESERVE_URL} target="_blank" rel="noreferrer" className="mt-6 inline-flex rounded-full bg-[#b6924e] px-9 py-3.5 text-[12px] font-semibold uppercase tracking-widest text-[#f7f0e0] transition-transform hover:scale-[1.03]">{tr.btnReserve}</a>
+          <a href={RESERVE_URL} data-nv-cta="Reservar mesa" target="_blank" rel="noreferrer" className="mt-6 inline-flex rounded-full bg-[#b6924e] px-9 py-3.5 text-[12px] font-semibold uppercase tracking-widest text-[#f7f0e0] transition-transform hover:scale-[1.03]">{tr.btnReserve}</a>
         </Reveal>
       </section>
 

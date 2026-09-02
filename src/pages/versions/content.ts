@@ -1,36 +1,36 @@
 // Shared content + imagery for the rustic homepage concepts.
-import logo from "@/assets/logo.png";
-import logoMark from "@/assets/logo-mark.png"; // white background made transparent
-import menuOlive from "@/assets/menu-olive.png"; // real olive-branch illustration from the menu
-import menuOil from "@/assets/menu-oil.png"; // real oil-carafe + pasta illustration from the menu
-import menuSalami from "@/assets/menu-salami.png"; // real cured-meat illustration
-import menuTomato from "@/assets/menu-tomato.png"; // real cherry-tomato-vine illustration
-import menuCake from "@/assets/menu-cake.png"; // real torta caprese slice illustration
-import menuPizza from "@/assets/menu-pizza.png"; // real pizza illustration
-import pressStadskrant from "@/assets/press-stadskrant.jpg"; // De Stadskrant feature clipping (wk27, p.8)
-import pressVolendam from "@/assets/press-volendam.jpg"; // De Stadskrant feature (wk25, p.4)
-import heroImage from "@/assets/hero-restaurant.jpg";
+import logo from "@/assets/logo.webp";
+import logoMark from "@/assets/logo-mark.webp"; // white background made transparent
+import menuOlive from "@/assets/menu-olive.webp"; // real olive-branch illustration from the menu
+import menuOil from "@/assets/menu-oil.webp"; // real oil-carafe + pasta illustration from the menu
+import menuSalami from "@/assets/menu-salami.webp"; // real cured-meat illustration
+import menuTomato from "@/assets/menu-tomato.webp"; // real cherry-tomato-vine illustration
+import menuCake from "@/assets/menu-cake.webp"; // real torta caprese slice illustration
+import menuPizza from "@/assets/menu-pizza.webp"; // real pizza illustration
+import pressStadskrant from "@/assets/press-stadskrant.webp"; // De Stadskrant feature clipping (wk27, p.8)
+import pressVolendam from "@/assets/press-volendam.webp"; // De Stadskrant feature (wk25, p.4)
+import heroImage from "@/assets/hero-restaurant.webp";
 // Real restaurant photography (used by v2)
-import v2Hero from "@/assets/v2-hero.jpg";
-import v2IntHarbor from "@/assets/v2-int-harbor.jpg";
-import v2IntTerrace from "@/assets/v2-int-terrace.jpg";
-import v2IntWheel from "@/assets/v2-int-wheel.jpg";
-import v2IntCorner from "@/assets/v2-int-corner.jpg";
-import v2FoodVongole from "@/assets/v2-food-vongole.jpg";
-import v2FoodBolognese from "@/assets/v2-food-bolognese.jpg";
-import v2FoodGamberi from "@/assets/v2-food-gamberi.jpg";
-import v2FoodPizza from "@/assets/v2-food-pizza.jpg";
-import v2FoodVegPizza from "@/assets/v2-food-vegpizza.jpg";
-import traditionImg from "@/assets/tradition-of-excellence.jpeg";
-import occasionImg from "@/assets/place-for-every-occasion.jpeg";
-import inside2 from "@/assets/inside-2.jpeg";
-import inside3 from "@/assets/inside-3.jpeg";
-import inside4 from "@/assets/inside-4.jpeg";
-import inside5 from "@/assets/inside-5.jpeg";
-import moments1 from "@/assets/moments-1.jpeg";
-import moments2 from "@/assets/moments-2.jpeg";
-import moments3 from "@/assets/moments-3.jpeg";
-import moments5 from "@/assets/moments-5.jpeg";
+import v2Hero from "@/assets/v2-hero.webp";
+import v2IntHarbor from "@/assets/v2-int-harbor.webp";
+import v2IntTerrace from "@/assets/v2-int-terrace.webp";
+import v2IntWheel from "@/assets/v2-int-wheel.webp";
+import v2IntCorner from "@/assets/v2-int-corner.webp";
+import v2FoodVongole from "@/assets/v2-food-vongole.webp";
+import v2FoodBolognese from "@/assets/v2-food-bolognese.webp";
+import v2FoodGamberi from "@/assets/v2-food-gamberi.webp";
+import v2FoodPizza from "@/assets/v2-food-pizza.webp";
+import v2FoodVegPizza from "@/assets/v2-food-vegpizza.webp";
+import traditionImg from "@/assets/tradition-of-excellence.webp";
+import occasionImg from "@/assets/place-for-every-occasion.webp";
+import inside2 from "@/assets/inside-2.webp";
+import inside3 from "@/assets/inside-3.webp";
+import inside4 from "@/assets/inside-4.webp";
+import inside5 from "@/assets/inside-5.webp";
+import moments1 from "@/assets/moments-1.webp";
+import moments2 from "@/assets/moments-2.webp";
+import moments3 from "@/assets/moments-3.webp";
+import moments5 from "@/assets/moments-5.webp";
 
 export const images = {
   logo,

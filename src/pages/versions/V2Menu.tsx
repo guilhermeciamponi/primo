@@ -65,7 +65,7 @@ const V2Menu = () => {
       {/* ── Hero ───────────────────────────────────────────────── */}
       <section className="relative flex min-h-[86vh] items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={v2photos.hero} alt="" className="h-full w-full object-cover" />
+          <img src={v2photos.hero} alt="" className="h-full w-full object-cover" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(38,28,16,0.42), rgba(28,21,12,0.60))" }} />
         </div>
         <img src={olive} alt="" className="pointer-events-none absolute -right-6 -top-6 w-56 opacity-70 md:w-80" />
@@ -82,7 +82,7 @@ const V2Menu = () => {
           <div className="mt-5 flex justify-center"><DiamondRule color="#d8b877" /></div>
           <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-[#f7f0e0]/85 md:text-base">{tr.heroSubtitle}</p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href={RESERVE_URL} target="_blank" rel="noreferrer" className="rounded-[3px] bg-[#d8b877] px-8 py-3 text-[12px] font-semibold uppercase tracking-widest text-[#1e2c4d] transition-transform hover:scale-[1.03]">{tr.btnReserve}</a>
+            <a href={RESERVE_URL} data-nv-cta="Reservar mesa" target="_blank" rel="noreferrer" className="rounded-[3px] bg-[#d8b877] px-8 py-3 text-[12px] font-semibold uppercase tracking-widest text-[#1e2c4d] transition-transform hover:scale-[1.03]">{tr.btnReserve}</a>
             <Link to="/menu" className="rounded-[3px] border border-[#f7f0e0]/50 px-8 py-3 text-[12px] font-semibold uppercase tracking-widest text-[#f7f0e0] transition-colors hover:bg-[#f7f0e0]/10">{tr.btnMenu}</Link>
           </div>
           <div className="mt-10 flex flex-col justify-center gap-4 text-[11px] uppercase tracking-[0.2em] text-[#f7f0e0]/70 sm:flex-row sm:gap-10">
@@ -330,7 +330,7 @@ const V2Menu = () => {
                 <span className="font-['Fraunces'] text-lg font-semibold">{restaurant.phone}</span>
               </span>
             </a>
-            <a href={RESERVE_URL} target="_blank" rel="noreferrer" className="rounded-full border-2 border-[#b6924e] px-8 py-3.5 text-[12px] font-semibold uppercase tracking-widest text-[#b6924e] transition-colors hover:bg-[#b6924e] hover:text-[#f7f0e0]">{tr.btnBook}</a>
+            <a href={RESERVE_URL} data-nv-cta="Reservar mesa" target="_blank" rel="noreferrer" className="rounded-full border-2 border-[#b6924e] px-8 py-3.5 text-[12px] font-semibold uppercase tracking-widest text-[#b6924e] transition-colors hover:bg-[#b6924e] hover:text-[#f7f0e0]">{tr.btnBook}</a>
           </div>
         </div>
       </section>

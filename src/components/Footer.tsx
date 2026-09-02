@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import BookingButton from "./BookingButton";
 import OrnamentalDivider from "./OrnamentalDivider";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const Footer = () =>
 <footer className="bg-primary text-primary-foreground">

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, CalendarDays } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const navItems = [
 { label: "Home", path: "/" },
