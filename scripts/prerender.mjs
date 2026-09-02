@@ -8,7 +8,7 @@
 // Run by `npm run build`. Nothing here executes at request time.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(ROOT, "dist");
@@ -24,7 +24,9 @@ const ROUTES = [
   { path: "/contact",     out: "contact/index.html",     title: "Al Primo Piano · Contact" },
 ];
 
-const { render } = await import(join(ROOT, "dist-ssr/entry-server.js"));
+// pathToFileURL, not a bare path: ESM dynamic import of an absolute filesystem path is not
+// portable across platforms, and this runs on the Cloudflare build image, not just macOS.
+const { render } = await import(pathToFileURL(join(ROOT, "dist-ssr/entry-server.js")).href);
 const template = readFileSync(join(DIST, "index.html"), "utf-8");
 
 if (!template.includes('<div id="root"></div>')) {
