@@ -18,7 +18,7 @@
 # actually stops other people iframing this site.
 
 /*
-  Content-Security-Policy: default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; frame-src https://www.google.com https://maps.google.com; form-action 'self'; script-src 'self' 'unsafe-inline' https://api.nuvenhub.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://api.nuvenhub.com
+  Content-Security-Policy: default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; frame-src https://www.google.com https://maps.google.com; form-action 'self'; script-src 'self' 'unsafe-inline' https://api.nuvenhub.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://api.nuvenhub.com https://cloudflareinsights.com
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

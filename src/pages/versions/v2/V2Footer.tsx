@@ -24,17 +24,17 @@ export const V2Footer = ({ tr }: { tr: Strings }) => {
       <section id="contact" className="relative z-10 py-16 text-[#f2e6cf]">
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 text-center md:grid-cols-3">
           <div>
-            <h4 className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#d8b877]">{tr.addressLabel}</h4>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#d8b877]">{tr.addressLabel}</h3>
             <p className="mt-2 font-['Fraunces'] text-lg">{restaurant.address}</p>
             <p className="text-[14px] text-[#f2e6cf]/70">{restaurant.city}</p>
           </div>
           <div>
-            <h4 className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#d8b877]">{tr.footerHours}</h4>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#d8b877]">{tr.footerHours}</h3>
             <p className="mt-2 font-['Fraunces'] text-lg">{openTime}</p>
             <p className="text-[14px] text-[#f2e6cf]/70">{tr.closed} · {tr.days[closedDayIndex]}</p>
           </div>
           <div>
-            <h4 className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#d8b877]">{tr.footerContact}</h4>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#d8b877]">{tr.footerContact}</h3>
             <p className="mt-2 font-['Fraunces'] text-lg">{restaurant.phone}</p>
             <p className="text-[14px] text-[#f2e6cf]/70">{restaurant.email}</p>
           </div>
@@ -57,7 +57,7 @@ export const V2Footer = ({ tr }: { tr: Strings }) => {
             </div>
 
             <div>
-              <h4 className="mb-4 text-xs uppercase tracking-[0.2em] text-[#b6924e]">{tr.quickLinks}</h4>
+              <h3 className="mb-4 text-xs uppercase tracking-[0.2em] text-[#b6924e]">{tr.quickLinks}</h3>
               <nav className="flex flex-col gap-2">
                 {quick.map((item) => (
                   <Link key={item.to} to={item.to} className="text-sm text-[#f7f0e0]/70 transition-colors hover:text-[#f7f0e0]">{item.label}</Link>
@@ -66,7 +66,7 @@ export const V2Footer = ({ tr }: { tr: Strings }) => {
             </div>
 
             <div>
-              <h4 className="mb-4 text-xs uppercase tracking-[0.2em] text-[#b6924e]">{tr.visitUs}</h4>
+              <h3 className="mb-4 text-xs uppercase tracking-[0.2em] text-[#b6924e]">{tr.visitUs}</h3>
               <div className="space-y-2 text-sm text-[#f7f0e0]/70">
                 <p>{restaurant.address}</p>
                 <p>{restaurant.city}</p>
