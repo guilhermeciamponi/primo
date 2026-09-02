@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const languages = [
   { code: "en", label: "EN" },
@@ -411,12 +411,23 @@ export const t: Record<Lang, Strings> = {
 const KEY = "apiano-lang";
 
 // localStorage-backed so the choice persists across the /v1 /v2 /v3 pages.
+//
+// The saved language is read in an effect, not in the useState initialiser. The build
+// prerenders every route as English, so reading localStorage during the first client render
+// would make a returning IT/NL visitor hydrate different text than the served HTML — React
+// treats that as a failed hydration and re-renders the whole root, throwing away the
+// prerendered markup this site exists to serve. Cost of doing it this way: those visitors
+// see English for one frame before it swaps.
 export function useLang() {
-  const [lang, setLangState] = useState<Lang>(() => {
-    if (typeof window === "undefined") return "en";
-    const saved = window.localStorage.getItem(KEY) as Lang | null;
-    return saved && languages.some((l) => l.code === saved) ? saved : "en";
-  });
+  const [lang, setLangState] = useState<Lang>("en");
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem(KEY) as Lang | null;
+      if (saved && saved !== "en" && languages.some((l) => l.code === saved)) setLangState(saved);
+    } catch {
+      /* ignore */
+    }
+  }, []);
   const setLang = (l: Lang) => {
     try {
       window.localStorage.setItem(KEY, l);
