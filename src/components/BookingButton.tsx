@@ -25,7 +25,7 @@ interface BookingButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElemen
 
 const BookingButton = ({ variant, className, children, ...props }: BookingButtonProps) => (
   <a
-    href="https://booking-link-placeholder.com"
+    href="https://widget.thefork.com/993cb32c-c3c2-4db5-8cd8-574a650f236f"
     target="_blank"
     rel="noopener noreferrer"
     className={cn(bookingButtonVariants({ variant, className }))}

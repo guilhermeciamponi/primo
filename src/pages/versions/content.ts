@@ -121,8 +121,9 @@ export const hours: { d: number; t: string | null }[] = [
 export const openTime = hours.find((h) => h.t)?.t ?? "12:00 to 22:00";
 export const closedDayIndex = hours.find((h) => !h.t)?.d ?? 1;
 
-// Reservations go to the restaurant's Google "Reserve a table" page.
-export const RESERVE_URL = "https://www.google.com/maps/reserve/v/dine/c/RjzKUblyBXY?source=pa&opi=89978449&hl=en";
+// Every "Reserve a table" / "Book now" button on the site points here — header, hero,
+// home CTA, menu, about, contact and footer all read this one constant.
+export const RESERVE_URL = "https://widget.thefork.com/993cb32c-c3c2-4db5-8cd8-574a650f236f";
 
 export type IconKey =
   | "olive"

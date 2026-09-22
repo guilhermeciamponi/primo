@@ -54,7 +54,7 @@ const Header = () => {
         <div className="hidden xl:flex items-center gap-4 shrink-0">
           <LanguageSwitcher />
           <a
-            href="https://booking-link-placeholder.com"
+            href="https://widget.thefork.com/993cb32c-c3c2-4db5-8cd8-574a650f236f"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-body text-xs tracking-elegant uppercase px-5 py-2.5 rounded-xl border-2 border-gold text-gold bg-transparent hover:bg-gold hover:text-cream transition-all duration-300 shadow-sm hover:shadow-md whitespace-nowrap">
@@ -96,7 +96,7 @@ const Header = () => {
               <LanguageSwitcher />
             </div>
             <a
-            href="https://booking-link-placeholder.com"
+            href="https://widget.thefork.com/993cb32c-c3c2-4db5-8cd8-574a650f236f"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 inline-flex items-center justify-center gap-2 font-body text-sm tracking-elegant uppercase px-6 py-3.5 rounded-xl border-2 border-gold text-gold hover:bg-gold hover:text-cream transition-all duration-300">
