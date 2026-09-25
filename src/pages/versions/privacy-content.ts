@@ -86,7 +86,7 @@ export const privacy: Record<Lang, PrivacyDoc> = {
           "Hosting — Cloudflare. Serving a page requires your IP address; Cloudflare keeps short server logs for security.",
           "Typefaces are served from this website itself. No request goes to any font provider.",
           "Two small settings are kept in your browser's own storage, not as cookies: which language you chose, and your answer to the cookie notice. They are there so the site stops asking, and they never leave your device.",
-          "The map on the Contact page comes from Google. It loads only once you allow it — either from the cookie notice, or with the “Show the map” button on the page itself. Until you do, no request goes to Google and the address is shown in its place. You can change your choice at the bottom of this page. Once it is loaded, Google may set its own cookies inside the map, under Google's terms and not ours.",
+          "The map on the Contact page comes from Google. It loads only when you ask for it, with the “Show the map” button on the page itself. Until you do, no request goes to Google and the address is shown in its place. You can change your choice at the bottom of this page. Once it is loaded, Google may set its own cookies inside the map, under Google's terms and not ours.",
         ],
       },
       {
@@ -126,7 +126,7 @@ export const privacy: Record<Lang, PrivacyDoc> = {
           "Hosting — Cloudflare. Om een pagina te tonen is uw IP-adres nodig; Cloudflare bewaart korte serverlogs voor beveiliging.",
           "Lettertypen worden vanaf deze website zelf geleverd. Er gaat geen verzoek naar een externe aanbieder.",
           "Twee kleine instellingen staan in de opslag van uw eigen browser, niet als cookie: welke taal u koos en uw antwoord op de cookiemelding. Ze zijn er zodat de site niet blijft vragen, en ze verlaten uw apparaat nooit.",
-          "De kaart op de contactpagina komt van Google. Hij laadt pas als u dat toestaat — via de cookiemelding, of met de knop “Kaart tonen” op de pagina zelf. Tot dan gaat er geen verzoek naar Google en ziet u in plaats daarvan het adres. Onderaan deze pagina kunt u uw keuze wijzigen. Zodra hij geladen is, kan Google eigen cookies plaatsen binnen de kaart, onder de voorwaarden van Google en niet die van ons.",
+          "De kaart op de contactpagina komt van Google. Hij laadt pas wanneer u erom vraagt, met de knop “Kaart tonen” op de pagina zelf. Tot dan gaat er geen verzoek naar Google en ziet u in plaats daarvan het adres. Onderaan deze pagina kunt u uw keuze wijzigen. Zodra hij geladen is, kan Google eigen cookies plaatsen binnen de kaart, onder de voorwaarden van Google en niet die van ons.",
         ],
       },
       {
@@ -166,7 +166,7 @@ export const privacy: Record<Lang, PrivacyDoc> = {
           "Hosting — Cloudflare. Per mostrare una pagina serve il suo indirizzo IP; Cloudflare conserva brevi registri del server per sicurezza.",
           "I caratteri tipografici sono serviti da questo stesso sito. Nessuna richiesta raggiunge un fornitore esterno.",
           "Due piccole impostazioni restano nella memoria del suo browser, non come cookie: la lingua che ha scelto e la sua risposta all'avviso sui cookie. Servono perch\u00e9 il sito smetta di chiedere e non lasciano mai il suo dispositivo.",
-          "La mappa nella pagina Contatti è di Google. Si carica solo quando lei lo consente — dall'avviso sui cookie oppure con il pulsante “Mostra la mappa” sulla pagina stessa. Fino ad allora nessuna richiesta raggiunge Google e al suo posto viene mostrato l'indirizzo. In fondo a questa pagina può cambiare la sua scelta. Una volta caricata, Google può impostare cookie propri all'interno della mappa, secondo le condizioni di Google e non le nostre.",
+          "La mappa nella pagina Contatti è di Google. Si carica solo quando lei lo chiede, con il pulsante “Mostra la mappa” sulla pagina stessa. Fino ad allora nessuna richiesta raggiunge Google e al suo posto viene mostrato l'indirizzo. In fondo a questa pagina può cambiare la sua scelta. Una volta caricata, Google può impostare cookie propri all'interno della mappa, secondo le condizioni di Google e non le nostre.",
         ],
       },
       {
