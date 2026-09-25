@@ -6,8 +6,6 @@ import { V2Header } from "./V2Header";
 import { V2Footer } from "./V2Footer";
 import { PageHero } from "./PageHero";
 import { Reveal, DiamondRule } from "./ui";
-import { useConsentChoice } from "./Consent";
-import { setConsent } from "@/lib/consent";
 
 const olive = images.illustrations.olive;
 const oil = images.illustrations.oil;
@@ -34,7 +32,6 @@ const Detail = ({ icon: Icon, title, children }: { icon: typeof MapPin; title: s
 
 const ContactPage = () => {
   const { lang, setLang, tr } = useLang();
-  const mapAllowed = useConsentChoice() === "granted";
   useEffect(() => {
     document.title = "Al Primo Piano · Contact";
   }, []);
@@ -97,51 +94,23 @@ const ContactPage = () => {
             </div>
           </Reveal>
 
-          {/* Map, or the address panel standing in for it until Google is allowed. */}
+          {/* The map loads on arrival, deliberately: showing where the restaurant is IS the job
+              of this page, not decoration. That means Google receives the visitor's IP before
+              anyone clicks anything — which is exactly why the notice and the privacy page have
+              to say so in plain words rather than implying a choice that does not exist. */}
           <Reveal delay={0.1}>
-            {mapAllowed ? (
-              <div className="h-full min-h-[420px] overflow-hidden rounded-[8px] border-2 border-[#b6924e]/40 shadow-md">
-                <iframe
-                  title="Al Primo Piano map"
-                  src={MAPS_EMBED}
-                  className="h-full min-h-[420px] w-full"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                />
-              </div>
-            ) : (
-            <div className="flex h-full min-h-[420px] flex-col items-center justify-center gap-6 overflow-hidden rounded-[8px] border-2 border-[#b6924e]/40 bg-[#4e3a2a] px-8 py-12 text-center shadow-md">
-              <img src={images.logoMark} alt="" className="h-14 w-14 object-contain opacity-90" style={{ filter: "brightness(0) invert(0.92)" }} loading="lazy" />
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#d8b877]">{tr.visitUs}</p>
-                <p className="mt-3 font-['Fraunces'] text-3xl leading-tight text-[#f7f0e0] md:text-4xl">{restaurant.address}</p>
-                <p className="mt-1 text-[15px] text-[#f7f0e0]/75">{restaurant.city}</p>
-              </div>
-              <DiamondRule color="#d8b877" />
-              <a
-                href={MAPS_DIR}
-                data-nv-cta="Abrir no mapa"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-[3px] bg-[#d8b877] px-7 py-3 text-[12px] font-semibold uppercase tracking-widest text-[#1e2c4d] transition-transform hover:scale-[1.03]"
-              >
-                <Navigation size={14} /> {tr.getDirections}
-              </a>
-              {/* The click IS the consent — it stores the choice and the map takes over. */}
-              <div className="max-w-[34ch] border-t border-[#f7f0e0]/15 pt-5">
-                <p className="text-[13px] leading-relaxed text-[#f2e6cf]/60">{tr.mapHidden}</p>
-                <button
-                  type="button"
-                  onClick={() => setConsent("granted")}
-                  className="mt-3 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#d8b877] underline-offset-4 hover:underline"
-                >
-                  <MapPin size={13} /> {tr.mapShow}
-                </button>
-              </div>
+            <div className="h-full min-h-[420px] overflow-hidden rounded-[8px] border-2 border-[#b6924e]/40 shadow-md">
+              <iframe
+                title="Al Primo Piano map"
+                src={MAPS_EMBED}
+                className="h-full min-h-[420px] w-full"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
-            )}
+
           </Reveal>
         </div>
       </div>

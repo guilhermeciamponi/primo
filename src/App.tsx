@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import V2Menu from "./pages/versions/V2Menu";
+import { SiteNotice } from "./pages/versions/v2/Notice";
 
 // Only the home route is bundled eagerly — it is the landing page and the one Lighthouse
 // measures. The rest are split out so their code is not downloaded before first paint.
@@ -49,7 +50,10 @@ const RouteFallback = () => <div className="min-h-screen bg-[#f7f0e0]" />;
 const App = () => {
   usePrefetchRoutes();
   return (
-    <Suspense fallback={<RouteFallback />}>
+    <>
+      {/* Shown once, above the routes, so it survives navigation. */}
+      <SiteNotice />
+      <Suspense fallback={<RouteFallback />}>
       <Routes>
         <Route path="/" element={<V2Menu />} />
         <Route path="/v2" element={<V2Menu />} />
@@ -61,8 +65,9 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Suspense>
+        </Routes>
+      </Suspense>
+    </>
   );
 };
 

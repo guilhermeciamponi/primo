@@ -93,13 +93,10 @@ export type Strings = {
   insideSub: string;
   addressLabel: string;
   privacyLink: string;
-  consentTitle: string;
-  consentBody: string;
-  consentEssential: string;
-  consentAll: string;
-  consentRead: string;
-  mapHidden: string;
-  mapShow: string;
+  noticeTitle: string;
+  noticeBody: string;
+  noticeRead: string;
+  noticeAck: string;
   promos: { tag: string; title: string; desc: string }[];
   days: string[]; // Mon..Sun
 };
@@ -201,13 +198,10 @@ export const t: Record<Lang, Strings> = {
     insideTitle: "Inside Al Primo Piano",
     insideSub: "A glimpse of the warm, rustic room that awaits you.",
     addressLabel: "Address",
-    consentTitle: "Cookies and the map",
-    consentBody: "We count visits with our own counter, which stays with us and is not shared. The map on our Contact page comes from Google, so it loads only if you accept.",
-    consentEssential: "Essentials only",
-    consentAll: "Accept all",
-    consentRead: "Read the privacy page",
-    mapHidden: "The map comes from Google. You chose essentials only, so it has not been loaded.",
-    mapShow: "Show the map",
+    noticeTitle: "Cookies and the map",
+    noticeBody: "We count visits with our own counter — two cookies that stay with us and are not shared with anyone. The Contact page shows a Google map: it loads with the page, so Google receives your IP address there, under Google's terms.",
+    noticeRead: "Read the privacy page",
+    noticeAck: "Got it",
     privacyLink: "Privacy & cookies",
     promos: [
       { tag: "Weekend special", title: "Saturday Tasting Menu", desc: "Five courses with wine pairing, featuring the day's market." },
@@ -312,13 +306,10 @@ export const t: Record<Lang, Strings> = {
     insideTitle: "Dentro Al Primo Piano",
     insideSub: "Uno sguardo alla sala calda e rustica che ti aspetta.",
     addressLabel: "Indirizzo",
-    consentTitle: "Cookie e mappa",
-    consentBody: "Contiamo le visite con un contatore nostro, che resta con noi e non viene condiviso. La mappa nella pagina Contatti \u00e8 di Google e si carica solo se accetta.",
-    consentEssential: "Solo gli essenziali",
-    consentAll: "Accetta tutto",
-    consentRead: "Leggi l'informativa",
-    mapHidden: "La mappa \u00e8 di Google. Lei ha scelto solo gli essenziali, quindi non \u00e8 stata caricata.",
-    mapShow: "Mostra la mappa",
+    noticeTitle: "Cookie e mappa",
+    noticeBody: "Contiamo le visite con un contatore nostro — due cookie che restano con noi e non vengono condivisi con nessuno. La pagina Contatti mostra una mappa di Google: si carica insieme alla pagina, quindi Google riceve l\u00ec il suo indirizzo IP, secondo le condizioni di Google.",
+    noticeRead: "Leggi l'informativa",
+    noticeAck: "Ho capito",
     privacyLink: "Privacy e cookie",
     promos: [
       { tag: "Speciale weekend", title: "Menu Degustazione del Sabato", desc: "Cinque portate con abbinamento vini, dal mercato del giorno." },
@@ -423,13 +414,10 @@ export const t: Record<Lang, Strings> = {
     insideTitle: "Binnen bij Al Primo Piano",
     insideSub: "Een blik op de warme, rustieke zaal die u wacht.",
     addressLabel: "Adres",
-    consentTitle: "Cookies en de kaart",
-    consentBody: "Wij tellen bezoeken met een eigen teller, die bij ons blijft en niet wordt gedeeld. De kaart op onze contactpagina komt van Google en laadt alleen als u akkoord gaat.",
-    consentEssential: "Alleen het noodzakelijke",
-    consentAll: "Alles accepteren",
-    consentRead: "Lees het privacybeleid",
-    mapHidden: "De kaart komt van Google. U koos alleen het noodzakelijke, dus hij is niet geladen.",
-    mapShow: "Kaart tonen",
+    noticeTitle: "Cookies en de kaart",
+    noticeBody: "Wij tellen bezoeken met een eigen teller — twee cookies die bij ons blijven en met niemand worden gedeeld. De contactpagina toont een kaart van Google: die laadt met de pagina, dus Google ontvangt daar uw IP-adres, onder de voorwaarden van Google.",
+    noticeRead: "Lees het privacybeleid",
+    noticeAck: "Begrepen",
     privacyLink: "Privacy & cookies",
     promos: [
       { tag: "Weekend special", title: "Zaterdags Proefmenu", desc: "Vijf gangen met wijnarrangement, van de dagmarkt." },

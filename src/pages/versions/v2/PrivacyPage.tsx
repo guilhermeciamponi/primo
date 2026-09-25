@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useLang } from "../i18n";
 import { privacy, legal } from "../privacy-content";
-import { ConsentControl } from "./Consent";
 import { V2Header } from "./V2Header";
 import { V2Footer } from "./V2Footer";
 import { Reveal, DiamondRule } from "./ui";
@@ -60,9 +59,6 @@ export default function PrivacyPage() {
             {doc.updated}: {new Date().toISOString().slice(0, 10)}
           </p>
         )}
-
-        {/* Somewhere to change your mind. A withdrawal nobody can find is not a withdrawal. */}
-        <ConsentControl />
 
         {/* Not shown to anyone. Lets us confirm from outside what this page declares, without
             reading the bundle. It says "two-cookies" and not "interim-two-cookies" because two
