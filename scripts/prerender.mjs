@@ -22,6 +22,7 @@ const ROUTES = [
   { path: "/about",       out: "about/index.html",       title: "Al Primo Piano · About" },
   { path: "/gallery",     out: "gallery/index.html",     title: "Al Primo Piano · Gallery" },
   { path: "/contact",     out: "contact/index.html",     title: "Al Primo Piano · Contact" },
+  { path: "/privacy",     out: "privacy/index.html",     title: "Al Primo Piano · Privacy & cookies" },
 ];
 
 // pathToFileURL, not a bare path: ESM dynamic import of an absolute filesystem path is not

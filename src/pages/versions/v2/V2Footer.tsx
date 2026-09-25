@@ -101,6 +101,12 @@ export const V2Footer = ({ tr }: { tr: Strings }) => {
               <a href="https://www.tripadvisor.com/Restaurant_Review-g188599-d33007026-Reviews-Al_Primo_Piano-Volendam_North_Holland_Province.html" target="_blank" rel="noreferrer" className="transition-colors hover:text-[#f7f0e0]/60">TripAdvisor</a>
             </div>
           </div>
+          {/* Required for a European site, and useless if nobody can find it. */}
+          <div className="mt-6 text-center">
+            <Link to="/privacy" className="text-[12px] uppercase tracking-[0.18em] text-[#f7f0e0]/50 underline-offset-4 transition-colors hover:text-[#f7f0e0]/80 hover:underline">
+              {tr.privacyLink}
+            </Link>
+          </div>
           <div className="mt-8 text-center">
             {/*
               The agency credit.

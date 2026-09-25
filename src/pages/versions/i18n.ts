@@ -92,6 +92,14 @@ export type Strings = {
   insideTitle: string;
   insideSub: string;
   addressLabel: string;
+  privacyLink: string;
+  consentTitle: string;
+  consentBody: string;
+  consentEssential: string;
+  consentAll: string;
+  consentRead: string;
+  mapHidden: string;
+  mapShow: string;
   promos: { tag: string; title: string; desc: string }[];
   days: string[]; // Mon..Sun
 };
@@ -193,6 +201,14 @@ export const t: Record<Lang, Strings> = {
     insideTitle: "Inside Al Primo Piano",
     insideSub: "A glimpse of the warm, rustic room that awaits you.",
     addressLabel: "Address",
+    consentTitle: "Cookies and the map",
+    consentBody: "We count visits with our own counter, which stays with us and is not shared. The map on our Contact page comes from Google, so it loads only if you accept.",
+    consentEssential: "Essentials only",
+    consentAll: "Accept all",
+    consentRead: "Read the privacy page",
+    mapHidden: "The map comes from Google. You chose essentials only, so it has not been loaded.",
+    mapShow: "Show the map",
+    privacyLink: "Privacy & cookies",
     promos: [
       { tag: "Weekend special", title: "Saturday Tasting Menu", desc: "Five courses with wine pairing, featuring the day's market." },
       { tag: "Lunch deal", title: "Pranzo Express", desc: "Two courses with a glass of house wine, a midday escape." },
@@ -296,6 +312,14 @@ export const t: Record<Lang, Strings> = {
     insideTitle: "Dentro Al Primo Piano",
     insideSub: "Uno sguardo alla sala calda e rustica che ti aspetta.",
     addressLabel: "Indirizzo",
+    consentTitle: "Cookie e mappa",
+    consentBody: "Contiamo le visite con un contatore nostro, che resta con noi e non viene condiviso. La mappa nella pagina Contatti \u00e8 di Google e si carica solo se accetta.",
+    consentEssential: "Solo gli essenziali",
+    consentAll: "Accetta tutto",
+    consentRead: "Leggi l'informativa",
+    mapHidden: "La mappa \u00e8 di Google. Lei ha scelto solo gli essenziali, quindi non \u00e8 stata caricata.",
+    mapShow: "Mostra la mappa",
+    privacyLink: "Privacy e cookie",
     promos: [
       { tag: "Speciale weekend", title: "Menu Degustazione del Sabato", desc: "Cinque portate con abbinamento vini, dal mercato del giorno." },
       { tag: "Offerta pranzo", title: "Pranzo Express", desc: "Due portate con un calice di vino della casa, una pausa a mezzogiorno." },
@@ -399,6 +423,14 @@ export const t: Record<Lang, Strings> = {
     insideTitle: "Binnen bij Al Primo Piano",
     insideSub: "Een blik op de warme, rustieke zaal die u wacht.",
     addressLabel: "Adres",
+    consentTitle: "Cookies en de kaart",
+    consentBody: "Wij tellen bezoeken met een eigen teller, die bij ons blijft en niet wordt gedeeld. De kaart op onze contactpagina komt van Google en laadt alleen als u akkoord gaat.",
+    consentEssential: "Alleen het noodzakelijke",
+    consentAll: "Alles accepteren",
+    consentRead: "Lees het privacybeleid",
+    mapHidden: "De kaart komt van Google. U koos alleen het noodzakelijke, dus hij is niet geladen.",
+    mapShow: "Kaart tonen",
+    privacyLink: "Privacy & cookies",
     promos: [
       { tag: "Weekend special", title: "Zaterdags Proefmenu", desc: "Vijf gangen met wijnarrangement, van de dagmarkt." },
       { tag: "Lunchdeal", title: "Pranzo Express", desc: "Twee gangen met een glas huiswijn, een middagpauze." },
@@ -418,8 +450,15 @@ const KEY = "apiano-lang";
 // treats that as a failed hydration and re-renders the whole root, throwing away the
 // prerendered markup this site exists to serve. Cost of doing it this way: those visitors
 // see English for one frame before it swaps.
+// Every useLang() is its own useState, so two components mounted apart kept two languages.
+// That was invisible while only one component per page called it — and then the consent banner
+// was mounted in App, outside the pages, and stayed in English while the header switched to
+// Dutch. Instances now tell each other, the same way the consent store does.
+let langListeners: Array<(l: Lang) => void> = [];
+
 export function useLang() {
   const [lang, setLangState] = useState<Lang>("en");
+
   useEffect(() => {
     try {
       const saved = window.localStorage.getItem(KEY) as Lang | null;
@@ -427,14 +466,20 @@ export function useLang() {
     } catch {
       /* ignore */
     }
+    langListeners.push(setLangState);
+    return () => {
+      langListeners = langListeners.filter((fn) => fn !== setLangState);
+    };
   }, []);
+
   const setLang = (l: Lang) => {
     try {
       window.localStorage.setItem(KEY, l);
     } catch {
       /* ignore */
     }
-    setLangState(l);
+    langListeners.forEach((fn) => fn(l));
   };
+
   return { lang, setLang, tr: t[lang] };
 }

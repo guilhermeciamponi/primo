@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import V2Menu from "./pages/versions/V2Menu";
+import { ConsentBanner } from "./pages/versions/v2/Consent";
 
 // Only the home route is bundled eagerly — it is the landing page and the one Lighthouse
 // measures. The rest are split out so their code is not downloaded before first paint.
@@ -8,11 +9,13 @@ const loadMenu = () => import("./pages/versions/v2/MenuPage");
 const loadAbout = () => import("./pages/versions/v2/AboutPage");
 const loadGallery = () => import("./pages/versions/v2/GalleryPage");
 const loadContact = () => import("./pages/versions/v2/ContactPage");
+const loadPrivacy = () => import("./pages/versions/v2/PrivacyPage");
 
 const MenuPage = lazy(loadMenu);
 const AboutPage = lazy(loadAbout);
 const GalleryPage = lazy(loadGallery);
 const ContactPage = lazy(loadContact);
+const PrivacyPage = lazy(loadPrivacy);
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Splitting the routes cost something visible: the first click on Menu or Contact blanked the
@@ -47,7 +50,10 @@ const RouteFallback = () => <div className="min-h-screen bg-[#f7f0e0]" />;
 const App = () => {
   usePrefetchRoutes();
   return (
-    <Suspense fallback={<RouteFallback />}>
+    <>
+      {/* One per site, above the routes, so the choice survives navigation. */}
+      <ConsentBanner />
+      <Suspense fallback={<RouteFallback />}>
       <Routes>
         <Route path="/" element={<V2Menu />} />
         <Route path="/v2" element={<V2Menu />} />
@@ -57,9 +63,11 @@ const App = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Suspense>
+        </Routes>
+      </Suspense>
+    </>
   );
 };
 

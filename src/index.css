@@ -1,3 +1,4 @@
+@import "./fonts.css";
 /* Fonts are requested from index.html, not with @import. A CSS @import is discovered only
    after this stylesheet has downloaded, so the font CSS was chained behind it and blocked
    rendering for ~1.5s. Eleven of the fifteen families here were never referenced by any
