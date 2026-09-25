@@ -47,6 +47,16 @@ for (const route of ROUTES) {
   );
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${route.title}</title>`);
 
+  // Per-route canonical and og:url. The template carries the home URL, and copying the <head>
+  // verbatim meant every inner page declared itself a duplicate of the home page — which tells a
+  // search engine to drop five of the seven, and made every share of /menu/ show the home link.
+  // The trailing slash matters: Cloudflare 307s /menu to /menu/, so the canonical has to name the
+  // address that actually answers, or it points at a redirect.
+  const canonical = `https://alprimopiano.nl${route.path === "/" ? "/" : route.path + "/"}`;
+  html = html
+    .replace(/(<link rel="canonical"[^>]*href=")[^"]*(")/, `$1${canonical}$2`)
+    .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${canonical}$2`);
+
   // The SSR bundle is a separate Vite build, so its asset URLs are only usable if they hash
   // identically to the client build. Verify rather than assume: a silent mismatch would ship
   // a page full of broken images.
