@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && { vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs; } || echo '### PRERENDER STEP FAILED - deploying the client-rendered build instead ###'",
+    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",

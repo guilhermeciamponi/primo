@@ -28,7 +28,23 @@ const ROUTES = [
 // pathToFileURL, not a bare path: ESM dynamic import of an absolute filesystem path is not
 // portable across platforms, and this runs on the Cloudflare build image, not just macOS.
 const { render } = await import(pathToFileURL(join(ROOT, "dist-ssr/entry-server.js")).href);
-const template = readFileSync(join(DIST, "index.html"), "utf-8");
+// Comments in index.html are notes for whoever maintains this site: which environment
+// variable turns tracking on, why the fonts are local. They earn their place in the source
+// and none at all on the wire, where they are shipped to every visitor of a restaurant in
+// three languages, none of them written for. So the source keeps every word and the built
+// pages carry none.
+//
+// Script and style bodies are put aside first, so a "-->" inside JavaScript can never be read
+// as the end of a comment. React's own hydration markers are inserted after this and are not
+// touched by it.
+const stripComments = (h) =>
+  h
+    .split(/(<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>)/i)
+    .map((part, i) => (i % 2 ? part : part.replace(/<!--[\s\S]*?-->/g, "")))
+    .join("")
+    .replace(/\n[ \t]*\n[ \t]*\n+/g, "\n\n");
+
+const template = stripComments(readFileSync(join(DIST, "index.html"), "utf-8"));
 
 if (!template.includes('<div id="root"></div>')) {
   throw new Error("prerender: could not find an empty #root in dist/index.html");

@@ -42,10 +42,10 @@ export function SiteNotice() {
         shown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
     >
-      <div className="mx-auto flex max-w-5xl flex-col gap-5 rounded-[6px] border-2 border-[#b6924e]/45 bg-[#4e3a2a] p-6 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.7)] md:flex-row md:items-center md:gap-8">
+      <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-[6px] border-2 border-[#b6924e]/45 bg-[#4e3a2a] p-5 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.7)] md:flex-row md:items-center md:gap-6">
         <div className="flex-1">
-          <p className="font-['Fraunces'] text-[17px] font-semibold text-[#f7f0e0]">{tr.noticeTitle}</p>
-          <p className="mt-2 max-w-[68ch] text-[14px] leading-relaxed text-[#f2e6cf]/75">
+          <p className="font-['Fraunces'] text-[15px] font-semibold text-[#f7f0e0]">{tr.noticeTitle}</p>
+          <p className="mt-1.5 max-w-[62ch] text-[13px] leading-relaxed text-[#f2e6cf]/75">
             {tr.noticeBody}{" "}
             <Link to="/privacy" className="font-semibold text-[#d8b877] underline-offset-4 hover:underline">
               {tr.noticeRead}
@@ -55,9 +55,9 @@ export function SiteNotice() {
         <button
           type="button"
           onClick={markNoticeSeen}
-          className="inline-flex shrink-0 items-center gap-2 rounded-[3px] bg-[#d8b877] px-7 py-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#1e2c4d] transition-transform hover:scale-[1.03]"
+          className="inline-flex shrink-0 items-center gap-2 rounded-[3px] bg-[#d8b877] px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1e2c4d] transition-transform hover:scale-[1.03]"
         >
-          <Check size={15} strokeWidth={3} /> {tr.noticeAck}
+          <Check size={14} strokeWidth={3} /> {tr.noticeAck}
         </button>
       </div>
     </div>

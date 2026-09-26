@@ -9,11 +9,12 @@ import { Reveal, DiamondRule } from "./ui";
 
 const olive = images.illustrations.olive;
 const oil = images.illustrations.oil;
-// The map is back, behind consent. An iframe from Google would otherwise load the moment this
-// page opens and hand every visitor's IP to Google before they asked for anything — and these
-// visitors are in the EU. So: accept all, and it behaves normally; essentials only, and the
-// address panel stands in its place with a button that loads the map on click, which is the
-// consent. Nobody loses the map, nobody is sent to Google without choosing.
+// The map loads with the page. There is no consent gate in front of it: showing where the
+// restaurant is is the whole job of this page, and a map behind a button is a map most people
+// never open. The trade is that Google receives the visitor's IP here, so the site says so
+// plainly in the notice and on the privacy page instead of pretending otherwise.
+// (An earlier version of this comment described a consent button. There has never been one
+// in this file; it was describing a plan that was dropped.)
 //
 // /maps/embed?pb=... and not /maps?q=...&output=embed: the friendly form 302s here and the
 // redirect itself carries X-Frame-Options: SAMEORIGIN, so the frame is refused. No API key.
