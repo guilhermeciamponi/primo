@@ -41,9 +41,18 @@
   "compatibility_date": "2026-08-31",
   "assets": {
     "directory": "./dist",
-    // Prerendered routes are real files (dist/menu/index.html), so they are served directly.
-    // This only governs URLs with no matching file, which the client router turns into the 404.
-    "not_found_handling": "single-page-application"
+    // Rotas prerenderizadas sao arquivos de verdade (dist/menu/index.html) e continuam a ser
+    // servidas direto. Isto governa so os enderecos SEM arquivo correspondente.
+    //
+    // Era "single-page-application", que devolvia a home com status 200 para qualquer endereco
+    // inventado. Consequencias medidas em 27/09: /reserveren e /kaart devolviam os mesmos bytes
+    // da home, um buscador podia guardar cada erro de digitacao como copia da home, e um link
+    // errado num cardapio, panfleto ou QR code NUNCA acusava nada, porque a pessoa via a home e
+    // ninguem percebia. Com 404 de verdade, o primeiro teste apanha.
+    //
+    // Quem decide o que existe e a lista de arquivos que o build gerou, nao uma lista mantida a
+    // mao: pagina nova nasce funcionando sozinha, sem ninguem ter de lembrar de acrescentar nada.
+    "not_found_handling": "404-page"
   },
   "observability": {
     "enabled": true

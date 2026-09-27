@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLang } from "../i18n";
-import { privacy, legal } from "../privacy-content";
+import { privacy, legal, lastUpdated } from "../privacy-content";
 import { V2Header } from "./V2Header";
 import { V2Footer } from "./V2Footer";
 import { Reveal, DiamondRule } from "./ui";
@@ -53,10 +53,12 @@ export default function PrivacyPage() {
           </Reveal>
         ))}
 
-        {/* Only rendered once there is a real date to show — see privacy-content.ts. */}
+        {/* A data vem de privacy-content.ts e e a da ultima alteracao real do texto. Nao use
+            new Date() aqui: fazia a pagina dizer que tinha sido atualizada hoje, todo dia, e
+            fazia servidor e navegador renderizarem datas diferentes. */}
         {legal.entity && legal.kvk && (
           <p className="mt-12 text-[13px] italic text-[#4e3a2a]/60">
-            {doc.updated}: {new Date().toISOString().slice(0, 10)}
+            {doc.updated}: {lastUpdated}
           </p>
         )}
 

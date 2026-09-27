@@ -442,6 +442,20 @@ const KEY = "apiano-lang";
 // That was invisible while only one component per page called it — and then the consent banner
 // was mounted in App, outside the pages, and stayed in English while the header switched to
 // Dutch. Instances now tell each other, the same way the consent store does.
+// O HTML servido diz lang="en" porque e isso que o build prerenderiza. Quando a pessoa troca
+// de idioma, o texto muda e o atributo tem de mudar com ele: um leitor de tela anuncia a pagina
+// inteira na lingua errada, e um buscador le a versao holandesa como se fosse inglesa.
+//
+// Fora do React de proposito: <html> nao pertence a arvore, e mexer nele durante a renderizacao
+// nao vale para o HTML ja servido. Roda em efeito e no clique, nunca durante o render.
+function markHtmlLang(l: Lang) {
+  try {
+    document.documentElement.lang = l;
+  } catch {
+    /* ignore */
+  }
+}
+
 let langListeners: Array<(l: Lang) => void> = [];
 
 export function useLang() {
@@ -450,7 +464,10 @@ export function useLang() {
   useEffect(() => {
     try {
       const saved = window.localStorage.getItem(KEY) as Lang | null;
-      if (saved && saved !== "en" && languages.some((l) => l.code === saved)) setLangState(saved);
+      if (saved && saved !== "en" && languages.some((l) => l.code === saved)) {
+        setLangState(saved);
+        markHtmlLang(saved);
+      }
     } catch {
       /* ignore */
     }
@@ -466,6 +483,7 @@ export function useLang() {
     } catch {
       /* ignore */
     }
+    markHtmlLang(l);
     langListeners.forEach((fn) => fn(l));
   };
 

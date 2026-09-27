@@ -31,6 +31,19 @@ export const legal = {
   visitRetention: { en: "14 months", nl: "14 maanden", it: "14 mesi" } as Record<string, string>,
 };
 
+/**
+ * Data da ultima alteracao REAL deste texto, escrita a mao.
+ *
+ * Era `new Date()` na pagina, o que fazia a politica dizer que tinha sido atualizada hoje, todo
+ * dia, sem uma palavra ter mudado. Numa pagina legal isso nao e um detalhe: e uma afirmacao
+ * falsa, e a unica do site. De quebra, o servidor e o navegador renderizavam datas diferentes a
+ * partir do dia seguinte a cada build, o que quebrava a hidratacao do React nesta pagina.
+ *
+ * ⚠️ Quem mudar qualquer texto deste arquivo muda esta data no mesmo commit. Mudar so a data,
+ * sem mudar texto, e a mesma mentira em outra forma.
+ */
+export const lastUpdated = "2026-09-26";
+
 type Block = { h?: string; p?: string[]; ul?: string[] };
 export type PrivacyDoc = { title: string; updated: string; blocks: Block[] };
 

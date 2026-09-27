@@ -18,11 +18,18 @@ const DIST = join(ROOT, "dist");
 const ROUTES = [
   { path: "/",            out: "index.html",             title: "Al Primo Piano · Italian Restaurant · Volendam" },
   { path: "/menu",        out: "menu/index.html",        title: "Al Primo Piano · Menu" },
-  { path: "/menu-photos", out: "menu-photos/index.html", title: "Al Primo Piano · Menu" },
+  // noindex: a pagina repete o cardapio de /menu com fotos e nao esta ligada a nenhuma outra
+  // pagina. Sem isto, um buscador a trata como um segundo cardapio e as duas competem entre si.
+  { path: "/menu-photos", out: "menu-photos/index.html", title: "Al Primo Piano · Menu", noindex: true },
   { path: "/about",       out: "about/index.html",       title: "Al Primo Piano · About" },
   { path: "/gallery",     out: "gallery/index.html",     title: "Al Primo Piano · Gallery" },
   { path: "/contact",     out: "contact/index.html",     title: "Al Primo Piano · Contact" },
   { path: "/privacy",     out: "privacy/index.html",     title: "Al Primo Piano · Privacy & cookies" },
+  // Pagina de erro de verdade. O Worker serve este arquivo com status 404 para qualquer
+  // endereco sem arquivo (assets.not_found_handling no wrangler.jsonc). Antes ele devolvia a
+  // home com status 200, entao um link errado num panfleto ou num QR nunca acusava nada e um
+  // buscador guardava cada endereco inventado como copia da home.
+  { path: "/404",         out: "404.html",               title: "Al Primo Piano · Page not found", noindex: true },
 ];
 
 // pathToFileURL, not a bare path: ESM dynamic import of an absolute filesystem path is not
@@ -62,6 +69,12 @@ for (const route of ROUTES) {
     `<div id="root" data-prerendered="${route.path}">${markup}</div>`,
   );
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${route.title}</title>`);
+
+  // Rotas marcadas noindex levam a etiqueta no HTML servido, e nao so depois que o JavaScript
+  // roda: um buscador decide se indexa antes disso.
+  if (route.noindex) {
+    html = html.replace("</title>", '</title>\n    <meta name="robots" content="noindex, follow" />');
+  }
 
   // Per-route canonical and og:url. The template carries the home URL, and copying the <head>
   // verbatim meant every inner page declared itself a duplicate of the home page — which tells a

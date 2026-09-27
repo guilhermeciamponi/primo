@@ -33,12 +33,15 @@
       Enabled by setting VITE_NUVENHUB_TRACKING_SRC at build time (Cloudflare Pages → Settings →
       Environment variables) to the URL Nuvenhub shows under Site → Tracking. Leave it unset and
       this block does nothing at all: no script, no request, no cookie. Delete the block to
-      disconnect permanently — nothing else in the site refers to it.
+      disconnect permanently, nothing else in the site refers to it.
+
+      Se a variavel nao for definida, o Vite deixa o marcador literal no lugar; o script trata
+      isso como "desligado". Esta nota fica aqui, e nao dentro do <script>, porque comentario
+      dentro de script e servido ao visitante: o prerender so limpa comentarios de HTML.
     -->
     <script>
       (function () {
         var s = "%VITE_NUVENHUB_TRACKING_SRC%";
-        // Vite leaves an unset var as the literal placeholder — treat that as "off".
         if (!s || s.charAt(0) === "%") return;
         var e = document.createElement("script");
         e.src = s;
