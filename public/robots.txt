@@ -4,5 +4,5 @@ User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
-# No Sitemap: line — this site has no public/sitemap.xml. Pointing at one that 404s is
-# worse than omitting it: Search Console reports it as a fetch error on every crawl.
+# Sem linha Sitemap: este site nao tem public/sitemap.xml. Apontar para um que devolve 404 e
+# pior do que omitir: o Search Console acusa erro de leitura em toda visita do robo.
