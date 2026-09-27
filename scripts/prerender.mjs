@@ -41,15 +41,40 @@ const { render } = await import(pathToFileURL(join(ROOT, "dist-ssr/entry-server.
 // three languages, none of them written for. So the source keeps every word and the built
 // pages carry none.
 //
-// Script and style bodies are put aside first, so a "-->" inside JavaScript can never be read
-// as the end of a comment. React's own hydration markers are inserted after this and are not
-// touched by it.
-const stripComments = (h) =>
-  h
-    .split(/(<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>)/i)
-    .map((part, i) => (i % 2 ? part : part.replace(/<!--[\s\S]*?-->/g, "")))
-    .join("")
-    .replace(/\n[ \t]*\n[ \t]*\n+/g, "\n\n");
+// Read left to right, one pass, because the two things being skipped can contain each other.
+// A split on <script>...</script> first is what shipped a comment to production on 27/09: the
+// comment being removed mentioned a script tag in its own prose, the splitter believed it, and
+// the comment was cut in half so its opening never found its closing. Scanning in order cannot
+// be fooled that way: whichever opens first wins, and the other is just text inside it.
+//
+// React's own hydration markers are inserted after this and are not touched by it.
+const stripComments = (h) => {
+  let out = "";
+  let i = 0;
+  while (i < h.length) {
+    const comment = h.indexOf("<!--", i);
+    const rel = h.slice(i).search(/<(?:script|style)\b/i);
+    const tag = rel === -1 ? -1 : i + rel;
+
+    if (comment === -1 && tag === -1) break;
+
+    if (comment !== -1 && (tag === -1 || comment < tag)) {
+      // A comment opens first. Drop it whole, whatever its text happens to mention.
+      out += h.slice(i, comment);
+      const end = h.indexOf("-->", comment + 4);
+      if (end === -1) return out;          // unterminated: everything after it goes
+      i = end + 3;
+    } else {
+      // A script or style opens first. Copy it out untouched, its own comments included.
+      const name = /<(script|style)\b/i.exec(h.slice(tag))[1].toLowerCase();
+      const close = h.toLowerCase().indexOf(`</${name}>`, tag);
+      const stop = close === -1 ? h.length : close + name.length + 3;
+      out += h.slice(i, stop);
+      i = stop;
+    }
+  }
+  return (out + h.slice(i)).replace(/\n[ \t]*\n[ \t]*\n+/g, "\n\n");
+};
 
 const template = stripComments(readFileSync(join(DIST, "index.html"), "utf-8"));
 
