@@ -7,6 +7,35 @@
   // like it failed, when in fact it had already succeeded minutes earlier in the same log.
   //
   // With a config present, wrangler uploads ./dist as-is and runs no build of its own.
+  // ------------------------------------------------------------------------------------------
+  // EM ABERTO, 27/09/2026: o comando de build que publica este site NAO esta neste repositorio.
+  //
+  // O push publica sozinho. Medido contra o relogio, tres vezes, nao uma:
+  //     commit 25/09 18:08:15 UTC -> publicado 18:09:42   (1m27)
+  //     commit 25/09 18:26:40 UTC -> publicado 18:27:45   (1m05)
+  //     commit 26/09 16:01:52 UTC -> publicado 16:04:37   (2m45)
+  // Nao ha GitHub Actions no repositorio. Toda versao do Worker aparece com origem "wrangler" e
+  // autor alprimopianonl@gmail.com, inclusive as tres acima, que ninguem publicou a mao: e a
+  // maquina do Workers Builds rodando wrangler. Logo existe um comando de build guardado no
+  // painel da Cloudflare, e ele decide o que sobe.
+  //
+  // POR QUE ISTO IMPORTA. Ate 26/09 o "build" do package.json terminava em `|| echo`, e por isso
+  // saia com codigo 0 mesmo quando a build falhava: build quebrada virava deploy verde. Isso foi
+  // corrigido AQUI, no repositorio. Se o painel guardar o comando antigo por extenso, a correcao
+  // nao o alcanca e o defeito continua vivo onde ninguem o ve.
+  //
+  // NAO da para descobrir pela saida: com a build passando, o comando certo e o errado produzem
+  // exatamente o mesmo resultado publicado. So se distinguem quando ela falha, que e justamente
+  // a hora em que ninguem esta olhando. E nao se descobre quebrando a build de proposito: e site
+  // de cliente, no ar.
+  //
+  // COMO FECHAR: ler o campo do comando de build do Worker no painel da Cloudflare. O token da
+  // conta (~/.nuven/cloudflare-alprimo.env) NAO serve: a API de Workers Builds so aceita user
+  // token e devolve 10000 Authentication error. Pedido ao dono em 27/09, sem resposta ate agora.
+  //
+  // Enquanto esta nota existir, trate o `|| echo` como resolvido no repositorio e DESCONHECIDO
+  // no painel. Nao apague isto ao ler a correcao do package.json e concluir que esta fechado.
+  // ------------------------------------------------------------------------------------------
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "al-primo-piano",
   "compatibility_date": "2026-08-31",
