@@ -8,33 +8,39 @@
   //
   // With a config present, wrangler uploads ./dist as-is and runs no build of its own.
   // ------------------------------------------------------------------------------------------
-  // EM ABERTO, 27/09/2026: o comando de build que publica este site NAO esta neste repositorio.
+  // CONFERIDO EM 27/09/2026: o painel e o repositorio concordam. Nao ha comando escondido.
   //
-  // O push publica sozinho. Medido contra o relogio, tres vezes, nao uma:
+  // O dono leu a tela do Worker em Settings > Build e copiou os tres campos:
+  //     Build command:   npm run build
+  //     Deploy command:  npx wrangler deploy
+  //     Root directory:  /
+  //
+  // Ou seja, a maquina de build da Cloudflare roda o "build" do package.json deste repositorio.
+  // Nada de comando escrito por extenso no painel, nada que contorne o que esta aqui.
+  //
+  // POR QUE ISTO ESTEVE EM ABERTO. O push publica sozinho, medido contra o relogio tres vezes:
   //     commit 25/09 18:08:15 UTC -> publicado 18:09:42   (1m27)
   //     commit 25/09 18:26:40 UTC -> publicado 18:27:45   (1m05)
   //     commit 26/09 16:01:52 UTC -> publicado 16:04:37   (2m45)
-  // Nao ha GitHub Actions no repositorio. Toda versao do Worker aparece com origem "wrangler" e
-  // autor alprimopianonl@gmail.com, inclusive as tres acima, que ninguem publicou a mao: e a
-  // maquina do Workers Builds rodando wrangler. Logo existe um comando de build guardado no
-  // painel da Cloudflare, e ele decide o que sobe.
+  // Nao ha GitHub Actions aqui, e toda versao do Worker aparece com origem "wrangler" mesmo nas
+  // publicacoes que ninguem fez a mao: e o Workers Builds rodando wrangler na maquina deles.
+  // Como existia um comando guardado no painel que ninguem tinha lido, e como ate 26/09 o
+  // "build" do package.json terminava em `|| echo` e por isso saia com codigo 0 mesmo quando a
+  // build falhava, a correcao daquele defeito podia estar sendo contornada por esse comando.
+  // Nao estava.
   //
-  // POR QUE ISTO IMPORTA. Ate 26/09 o "build" do package.json terminava em `|| echo`, e por isso
-  // saia com codigo 0 mesmo quando a build falhava: build quebrada virava deploy verde. Isso foi
-  // corrigido AQUI, no repositorio. Se o painel guardar o comando antigo por extenso, a correcao
-  // nao o alcanca e o defeito continua vivo onde ninguem o ve.
+  // O QUE FICA PROVADO E O QUE NAO FICA. Medido: `npm run build` sai com 1 quando a build falha
+  // e com 0 quando passa. Nao medido: se a Cloudflare interrompe a publicacao diante desse 1.
+  // A documentacao deles nao diz, e a unica forma de provar seria quebrar a build de proposito
+  // num site de cliente no ar, o que nao se faz. Fica para a primeira build que falhar sozinha.
   //
-  // NAO da para descobrir pela saida: com a build passando, o comando certo e o errado produzem
-  // exatamente o mesmo resultado publicado. So se distinguem quando ela falha, que e justamente
-  // a hora em que ninguem esta olhando. E nao se descobre quebrando a build de proposito: e site
-  // de cliente, no ar.
+  // COMO CONFERIR DE NOVO, se alguem desconfiar: os tres campos acima estao em
+  // dash.cloudflare.com > Compute (Workers) > al-primo-piano > Settings > Build. A API nao
+  // serve para isso: o token da conta (~/.nuven/cloudflare-alprimo.env) devolve 10000
+  // Authentication error nos caminhos de builds, porque essa API so aceita user token.
   //
-  // COMO FECHAR: ler o campo do comando de build do Worker no painel da Cloudflare. O token da
-  // conta (~/.nuven/cloudflare-alprimo.env) NAO serve: a API de Workers Builds so aceita user
-  // token e devolve 10000 Authentication error. Pedido ao dono em 27/09, sem resposta ate agora.
-  //
-  // Enquanto esta nota existir, trate o `|| echo` como resolvido no repositorio e DESCONHECIDO
-  // no painel. Nao apague isto ao ler a correcao do package.json e concluir que esta fechado.
+  // ⚠️ E a regra que sobra disto, que vale muito alem deste comando: uma protecao que so se nota
+  // quando falha nao tem sintoma em dia bom, e por isso ninguem a confere durante meses.
   // ------------------------------------------------------------------------------------------
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "al-primo-piano",
