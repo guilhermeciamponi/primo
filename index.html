@@ -35,9 +35,16 @@
       this block does nothing at all: no script, no request, no cookie. Delete the block to
       disconnect permanently, nothing else in the site refers to it.
 
-      Se a variavel nao for definida, o Vite deixa o marcador literal no lugar; o script trata
-      isso como "desligado". Esta nota fica aqui, e nao dentro do <script>, porque comentario
-      dentro de script e servido ao visitante: o prerender so limpa comentarios de HTML.
+      Se a variavel nao for definida, o Vite deixa o marcador literal no lugar, e o codigo abaixo
+      trata isso como "desligado".
+
+      Esta nota fica aqui fora, e nao junto do codigo logo abaixo: a limpeza feita na build so
+      alcanca comentarios de HTML, entao um comentario escrito la dentro seria servido ao
+      visitante. E repare que ela nao escreve o nome da etiqueta por extenso em lugar nenhum, de
+      proposito: este arquivo passa por ferramentas que nao sao nossas, e um varredor que procure
+      abertura de etiqueta acreditaria no nome escrito aqui e cortaria esta nota ao meio. Foi
+      exatamente o que aconteceu em 27/09/2026, e as sete paginas serviram esta nota ao publico
+      durante catorze minutos.
     -->
     <script>
       (function () {
